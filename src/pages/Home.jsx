@@ -16,7 +16,7 @@ import treasury from '../assets/icons/treasury.svg';
 import wallets from '../assets/icons/wallet.svg';
 
 import currencyImg from '../assets/trust.svg';
-import psImg from '../assets/payments-settlements.svg';
+import psImg from '../assets/layers.svg';
 import rateImg from '../assets/rate.svg';
 import settlementImg from '../assets/settlement.svg';
 import vipImg from '../assets/vip.svg';
@@ -210,7 +210,7 @@ items-center
 					<div className='grid grid-cols-1 gap-[8.97px] lg:h-[233px]'>
 						<div className='h-[118px]'>
 							<img
-								src={heroImg}
+								src={psImg}
 								alt='support'
 								className='w-full
 							h-full
@@ -360,7 +360,7 @@ items-center
 						'
 						// lg:py-5
 						>
-							<img src={psImg} />
+							<img src={heroImg} />
 						</div>
 					</div>
 				</div>
