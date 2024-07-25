@@ -15,7 +15,7 @@ import swaps from '../assets/icons/swaps.svg';
 import treasury from '../assets/icons/treasury.svg';
 import wallets from '../assets/icons/wallet.svg';
 
-import currencyImg from '../assets/currencyImg.svg';
+import currencyImg from '../assets/trust.svg';
 import psImg from '../assets/payments-settlements.svg';
 import rateImg from '../assets/rate.svg';
 import settlementImg from '../assets/settlement.svg';
@@ -210,7 +210,7 @@ items-center
 					<div className='grid grid-cols-1 gap-[8.97px] lg:h-[233px]'>
 						<div className='h-[118px]'>
 							<img
-								src={vipImg}
+								src={heroImg}
 								alt='support'
 								className='w-full
 							h-full
