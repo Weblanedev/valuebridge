@@ -1,6 +1,5 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { Button } from './CustomButtons';
 import { FadeIn } from './Motion';
 
 const companyLinks = [
@@ -16,16 +15,6 @@ const serviceLinks = [
 ];
 
 const Footer = () => {
-	const [email, setEmail] = useState('');
-	const [subscribed, setSubscribed] = useState(false);
-
-	const handleSubscribe = (event) => {
-		event.preventDefault();
-		if (!email.trim()) return;
-		setSubscribed(true);
-		setEmail('');
-	};
-
 	return (
 		<footer className='bg-[#f7f7f5] pt-20 text-[#101828]'>
 			<div className='container mx-auto px-7'>
@@ -37,40 +26,15 @@ const Footer = () => {
 						<div className='absolute -right-8 bottom-0 h-24 w-40 rounded-t-[1.75rem] bg-[#102a78]' />
 						<div className='absolute left-[18%] -bottom-6 h-16 w-36 rounded-[1.5rem] bg-[#1c429e]/70' />
 					</div>
-					<div className='relative z-10 mx-auto max-w-xl text-center'>
-						<h3 className='text-[31px] font-semibold leading-tight tracking-[-0.03em] md:text-[40px]'>
-							Subscribe to our newsletter
+					<div className='relative z-10 mx-auto max-w-4xl py-6 text-center md:py-10'>
+						<h3 className='text-[32px] font-medium leading-[1.15] tracking-[-0.03em] md:text-[48px]'>
+							Ready to take your business to the next level with our payment solutions?
 						</h3>
-						<p className='mt-3 text-[19px] leading-7 text-white/80'>
-							Get updates on ValueBridge payments, settlements, and payouts.
-						</p>
-						<form
-							onSubmit={handleSubscribe}
-							className='mx-auto mt-6 flex max-w-md flex-col gap-3 sm:flex-row'
-						>
-							<input
-								type='email'
-								required
-								value={email}
-								onChange={(event) => setEmail(event.target.value)}
-								placeholder='Enter your email'
-								className='h-11 flex-1 rounded-full border border-white/30 bg-white/10 px-5 text-[17px] text-white outline-none placeholder:text-white/60'
-							/>
-							<motion.button
-								type='submit'
-								whileHover={{ scale: 1.04, y: -2 }}
-								whileTap={{ scale: 0.98 }}
-								transition={{ duration: 0.2 }}
-								className='h-11 rounded-full bg-white px-6 text-[17px] font-medium text-[#0c2474]'
-							>
-								Subscribe
-							</motion.button>
-						</form>
-						<p className='mt-4 text-[17px] text-white/70'>
-							{subscribed
-								? 'Thanks for subscribing.'
-								: 'We will only use your email for this newsletter.'}
-						</p>
+						<div className='mt-8 flex justify-center'>
+							<Link to='/contact'>
+								<Button btnText='Talk to us' icon={true} />
+							</Link>
+						</div>
 					</div>
 				</FadeIn>
 
