@@ -3,7 +3,8 @@
 import DescriptionComp from '../components/DescriptionComp';
 // import { Inter } from 'next/font/google';
 // const inter = Inter({ subsets: ['latin'] });
-import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 import corporateImg from '../assets/corporate-treasury.svg';
 import heroImg from '../assets/hero-img.svg';
 import cash from '../assets/icons/cash.svg';
@@ -21,27 +22,81 @@ import rateImg from '../assets/rate.svg';
 import settlementImg from '../assets/settlement.svg';
 import vipImg from '../assets/vip.svg';
 import worldImg from '../assets/world.svg';
-import { Button } from '../components/CustomButtons';
+import { CountUp, FadeIn } from '../components/Motion';
 import Tools from '../components/Tools';
 
+const paymentWords = ['Payment', 'Payouts', 'Settlements', 'Collections', 'Transfers', 'Checkout'];
+
 export default function Home() {
+	const [wordIndex, setWordIndex] = useState(0);
+	const [typed, setTyped] = useState('');
+	const [deleting, setDeleting] = useState(false);
+
+	useEffect(() => {
+		const word = paymentWords[wordIndex];
+		const pause = !deleting && typed === word;
+		const done = deleting && typed === '';
+		const delay = pause ? 1400 : done ? 280 : deleting ? 45 : 90;
+
+		const timer = setTimeout(() => {
+			if (pause) {
+				setDeleting(true);
+				return;
+			}
+			if (done) {
+				setDeleting(false);
+				setWordIndex((index) => (index + 1) % paymentWords.length);
+				return;
+			}
+			setTyped(word.slice(0, typed.length + (deleting ? -1 : 1)));
+		}, delay);
+
+		return () => clearTimeout(timer);
+	}, [typed, deleting, wordIndex]);
+
 	return (
 		<>
 			<section
-				// ${subTitle2 ? 'lg:pt-[120px]' : 'lg:pt-[150px]'}
-				// ${logo ? 'lg:pb-[68px]' : 'lg:pb-[150px]'}
 				className={`
-			bg-blue-950
+			relative overflow-hidden
+			bg-[#0c2474]
 			text-white
-			py-[40px]
-			lg:pb-[0px]
-			lg:pt-[60px]
-
+			pt-16
+			pb-0
+			lg:pt-24
+			lg:pb-0
 	`}
 			>
+				<div className='pointer-events-none absolute inset-0' aria-hidden='true'>
+					<motion.div
+						className='absolute -left-16 top-24 h-72 w-40 rounded-[2.5rem] bg-[#16348f]/70'
+						animate={{ x: [0, 18, 0], y: [0, 22, 0] }}
+						transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
+					/>
+					<motion.div
+						className='absolute left-[18%] top-10 h-[420px] w-[340px] rounded-[2.75rem] bg-[#14307f]'
+						animate={{ x: [0, -16, 0], y: [0, 18, 0] }}
+						transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+					/>
+					<motion.div
+						className='absolute right-[8%] top-6 h-[460px] w-[380px] rounded-[3rem] bg-[#1a3d9e]/80'
+						animate={{ x: [0, 14, 0], y: [0, -20, 0] }}
+						transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+					/>
+					<motion.div
+						className='absolute -right-10 bottom-0 h-40 w-[55%] rounded-t-[2.5rem] bg-[#102a78]'
+						animate={{ x: [0, -12, 0] }}
+						transition={{ duration: 17, repeat: Infinity, ease: 'easeInOut' }}
+					/>
+					<motion.div
+						className='absolute left-[8%] -bottom-8 h-28 w-64 rounded-[2rem] bg-[#1c429e]/60'
+						animate={{ y: [0, -14, 0] }}
+						transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+					/>
+				</div>
 				<div
-					// md:max-w-6xl
 					className='
+				relative z-10
 				container
 				mx-auto
 				lg:items-center
@@ -64,9 +119,7 @@ items-center
 						'
 					// w-full
 					>
-						<div
-							// flex
-							// flex-col
+						<FadeIn
 							className='
 							py-[14px]
 							md:pb-[27px] md:pt-[0px]
@@ -81,37 +134,34 @@ items-center
 						// px-6z
 						>
 							<h1
-								className='text-[32px]
-					lg:text-[64px] font-[700] lg:leading-[70px]
+								className='text-[58px]
+					sm:text-[81px]
+					lg:text-[116px] font-semibold leading-[0.95] tracking-[-0.05em] mx-auto
 					 '
 							>
-								Seamless Payment Solutions
+								<span className='block whitespace-nowrap'>
+									Seamless{' '}
+									<span className='inline-grid text-left text-[#7eb6ff]'>
+										<span className='invisible col-start-1 row-start-1' aria-hidden='true'>
+											Settlements|
+										</span>
+										<span className='col-start-1 row-start-1'>
+											{typed}
+											<span className='animate-pulse'>|</span>
+										</span>
+									</span>
+								</span>
+								<span className='block'>Solutions</span>
 							</h1>
 							<p
-								// lg:pb-[38px]
-								// lg:pt-[38px]
-								className='pt-[16px]
-							font-[400]
-							pb-[25px]
-							text-[18px] lg:text-[20px] leading-[35px] w-[90%] mx-auto'
+								className='mx-auto max-w-xl pt-8 pb-20 text-[18px] font-normal leading-8 text-white/70 lg:text-[20px]'
 							>
-								At ValueBridge HQ, we specialize in providing top-tier payment processing solutions tailored to meet the unique needs of your business.
-								Our mission is to bridge the gap between your business and financial success through innovative, secure, and efficient payment services.
+								ValueBridge connects your business to secure, efficient payments, so you can focus on growth.
 							</p>
-
-							<div
-								className='flex flex-col lg:flex-row justify-center space-y-2 lg:space-y-0 lg:space-x-2
-								'
-							// items-center
-							>
-								<Link to='/contact'>
-									<Button type='primary' btnText='Talk to us' icon={true} />
-								</Link>
-							</div>
-						</div>
-						<div
-							className={`order-first lg:order-last
-							`}
+						</FadeIn>
+						<FadeIn
+							delay={0.15}
+							className='w-full'
 						// w-full
 						// lg:pr-0
 						// lg:col-span-2
@@ -126,10 +176,10 @@ items-center
 								alt='hero-img'
 								// className='w-full'
 								// className='lg:h-full lg:w-full'
-								className='w-full'
+								className='relative w-full max-w-5xl mx-auto drop-shadow-2xl'
 							// h-[471.03px]
 							/>
-						</div>
+						</FadeIn>
 					</div>
 				</div>
 			</section>
@@ -144,10 +194,10 @@ items-center
 				// md:max-w-6xl
 				className='container
 
-			mx-auto px-7 pt-[32px] pb-[59px]'
+			mx-auto px-7 pt-8 pb-20'
 			>
-				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-2'>
-					<div className='grid grid-cols-1 gap-[8.97px]'>
+				<FadeIn className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
+					<div className='grid grid-cols-1 gap-4 rounded-3xl bg-[#f4f6fb] p-5'>
 						<div className='h-[118px]'>
 							<img
 								src={settlementImg}
@@ -157,7 +207,7 @@ items-center
 							/>
 						</div>
 						<div className='text-center '>
-							<h3 className='font-[500] text-[18px] leading-[35px] text-[#101828] pb-[3px]'>
+							<h3 className='font-[500] text-[20px] leading-[35px] text-[#101828] pb-[3px]'>
 								Recurring Billing
 							</h3>
 
@@ -166,7 +216,7 @@ items-center
 							</p>
 						</div>
 					</div>
-					<div className='grid grid-cols-1 gap-[8.97px] lg:h-[233px]'>
+					<div className='grid grid-cols-1 gap-4 rounded-3xl bg-[#f4f6fb] p-5'>
 						<div className='h-[118px]'>
 							<img
 								src={rateImg}
@@ -179,7 +229,7 @@ items-center
 							/>
 						</div>
 						<div className='text-center '>
-							<h3 className='font-[500] text-[18px] leading-[35px] text-[#101828] pb-[3px]'>
+							<h3 className='font-[500] text-[20px] leading-[35px] text-[#101828] pb-[3px]'>
 								Payment Gateway
 							</h3>
 
@@ -188,7 +238,7 @@ items-center
 							</p>
 						</div>
 					</div>
-					<div className='grid grid-cols-1  gap-[8.97px] lg:h-[233px]'>
+					<div className='grid grid-cols-1 gap-4 rounded-3xl bg-[#f4f6fb] p-5'>
 						<div className='h-[118px]'>
 							<img
 								src={currencyImg}
@@ -198,7 +248,7 @@ items-center
 							/>
 						</div>
 						<div className='text-center mt-[22px]'>
-							<h3 className='font-[500] text-[18px] leading-[35px] text-[#101828] pb-[3px]'>
+							<h3 className='font-[500] text-[20px] leading-[35px] text-[#101828] pb-[3px]'>
 								International Payments
 							</h3>
 
@@ -207,7 +257,7 @@ items-center
 							</p>
 						</div>
 					</div>
-					<div className='grid grid-cols-1 gap-[8.97px] lg:h-[233px]'>
+					<div className='grid grid-cols-1 gap-4 rounded-3xl bg-[#f4f6fb] p-5'>
 						<div className='h-[118px]'>
 							<img
 								src={psImg}
@@ -219,7 +269,7 @@ items-center
 						</div>
 						<div className='text-center'>
 							<h3
-								className='font-[500] text-[18px] leading-[35px] text-[#101828]
+								className='font-[500] text-[20px] leading-[35px] text-[#101828]
 							pb-[3px]
 							'
 							>
@@ -231,7 +281,7 @@ items-center
 							</p>
 						</div>
 					</div>
-				</div>
+				</FadeIn>
 			</section>
 
 			<section>
@@ -243,7 +293,7 @@ items-center
     px-7
     '
 				>
-					<div
+					<FadeIn
 						className='grid grid-cols-1 lg:grid-cols-2
 					items-center
                     '
@@ -252,10 +302,10 @@ items-center
 							<img src={worldImg} />
 						</div>
 						<div className='xl:ml-[130px] lg:w-[442px] py-[78px]'>
-							<h4 className='font-[400] leading-[32px] text-[14px] uppercase text-[#00611B]'>
+							<h4 className='font-[400] leading-[32px] text-[16px] uppercase text-[#00611B]'>
 							How It Works
 							</h4>
-							<h2 className='mt-[8px] mb-[24px] font-[600] text-[24px] leading-[36px] text-[#101828]'>
+							<h2 className='mt-[8px] mb-[24px] font-[600] text-[27px] leading-[36px] text-[#101828]'>
 							Expand your business globally with our multi-currency payment processing services.
 							</h2>
 
@@ -278,20 +328,20 @@ items-center
 											/>
 										</svg>
 										<div>
-											<h5 className='font-[500] text-[18px] leading-[32px] text-[#101828]'>
+											<h5 className='font-[500] text-[20px] leading-[32px] text-[#101828]'>
 												{item?.title}
 											</h5>
 
-											<p className='font-[400] text-[16px] leading-[32px] text-[#344054]'>
+											<p className='font-[400] text-[18px] leading-[32px] text-[#344054]'>
 												{item.subTitle}
 											</p>
 										</div>
 									</div>
 								))}
 							</div>
-						</div>
 					</div>
-				</div>
+				</FadeIn>
+			</div>
 			</section>
 			<section
 				className='
@@ -306,7 +356,7 @@ items-center
 					px-7
     '
 				>
-					<div
+					<FadeIn
 						className='grid grid-cols-1 lg:grid-cols-2
 						items-center
 						'
@@ -318,9 +368,9 @@ items-center
 						//  lg:ps-[56px]
 						//  py-[78px]
 						>
-							<h4 className='font-[400] leading-[32px] text-[14px] uppercase text-[#4C00EE]'>
+							<h4 className='font-[400] leading-[32px] text-[16px] uppercase text-[#4C00EE]'>
 								Payments							</h4>
-							<h2 className='mt-[8px] mb-[24px] font-[600] text-[24px] leading-[36px] text-[#101828]'>
+							<h2 className='mt-[8px] mb-[24px] font-[600] text-[27px] leading-[36px] text-[#101828]'>
 							Accept payments on the go with our mobile payment solutions, perfect for businesses of all sizes
 							</h2>
 
@@ -343,11 +393,11 @@ items-center
 											/>
 										</svg>
 										<div>
-											<h5 className='font-[500] text-[18px] leading-[32px] text-[#101828]'>
+											<h5 className='font-[500] text-[20px] leading-[32px] text-[#101828]'>
 												{item?.title}
 											</h5>
 
-											<p className='font-[400] text-[16px] leading-[32px] text-[#344054]'>
+											<p className='font-[400] text-[18px] leading-[32px] text-[#344054]'>
 												{item.subTitle}
 											</p>
 										</div>
@@ -362,7 +412,7 @@ items-center
 						>
 							<img src={heroImg} />
 						</div>
-					</div>
+					</FadeIn>
 				</div>
 			</section>
 
@@ -379,22 +429,15 @@ items-center
 				px-6
 					mx-auto'
 				>
-					<div
-						// flex-col
-						// lg:flex-row
-						// flex
-						className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0
-						'
-					// justify-between items-center
-					// lg:justify-end
-					// gap-12px-8
+					<FadeIn
+						className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0'
 					>
 						<div className='grid grid-cols-1 gap-[16px] lg:pr-16 lg:border-r-[0.5px] lg:border-[#B3B3B3] '>
-							<h4 className='font-[400] text-[56px] leading-[68px] text-center text-[#1D2939]'>
-								20M+
+							<h4 className='font-[400] text-[63px] leading-[68px] text-center text-[#1D2939]'>
+								<CountUp to={20} suffix='M+' />
 							</h4>
 							<p
-								className='font-[500px] text-[18px] leading-[24px]
+								className='font-[500px] text-[20px] leading-[24px]
 									text-center text-[#475467]
 									'
 							>
@@ -402,11 +445,11 @@ items-center
 							</p>
 						</div>
 						<div className='grid grid-cols-1 gap-[16px] lg:px-16 lg:border-r-[0.5px] lg:backdrop:order-[#B3B3B3] '>
-							<h4 className='font-[400] text-[56px] leading-[68px] text-center text-[#1D2939]'>
-								2K+
+							<h4 className='font-[400] text-[63px] leading-[68px] text-center text-[#1D2939]'>
+								<CountUp to={2} suffix='K+' />
 							</h4>
 							<p
-								className='font-[500px] text-[18px] leading-[24px]
+								className='font-[500px] text-[20px] leading-[24px]
 									text-center text-[#475467]
 									'
 							>
@@ -415,11 +458,11 @@ items-center
 						</div>
 
 						<div className='grid grid-cols-1 gap-[16px] lg:px-16 lg:border-r-[0.5px] lg:border-[#B3B3B3]  '>
-							<h4 className='font-[400] text-[56px] leading-[68px] text-center text-[#1D2939]'>
-								45+
+							<h4 className='font-[400] text-[63px] leading-[68px] text-center text-[#1D2939]'>
+								<CountUp to={45} suffix='+' />
 							</h4>
 							<p
-								className='font-[500px] text-[18px] leading-[24px]
+								className='font-[500px] text-[20px] leading-[24px]
 									text-center text-[#475467]
 									'
 							>
@@ -428,18 +471,18 @@ items-center
 						</div>
 
 						<div className='grid grid-cols-1 gap-[16px]'>
-							<h4 className='font-[400] text-[56px] leading-[68px] text-center text-[#1D2939]'>
-								20K
+							<h4 className='font-[400] text-[63px] leading-[68px] text-center text-[#1D2939]'>
+								<CountUp to={20} suffix='K' />
 							</h4>
 							<p
-								className='font-[500px] text-[18px] leading-[24px]
+								className='font-[500px] text-[20px] leading-[24px]
 									text-center text-[#475467]
 									'
 							>
 								Daily API Calls
 							</p>
 						</div>
-					</div>
+					</FadeIn>
 				</div>
 			</section>
 			<section
@@ -457,15 +500,15 @@ items-center
 			px-7 pb-[28px] lg:pb-[48px]
 			'
 				>
-					<div className='lg:w-[665px]'>
-						<h2 className='font-[600] text-[30px] lg:text-[40px] lg:leading-[50px]'>
+					<FadeIn className='lg:w-[665px]'>
+						<h2 className='font-[600] text-[34px] lg:text-[45px] lg:leading-[50px]'>
 							All the tools you need to setup payments for your business						</h2>
 
-						<p className='font-[400px] text-[20px] text-[#101828] leading-[36px] py-[16px] `pb-[24px]'>
+						<p className='font-[400px] text-[22px] text-[#101828] leading-[36px] py-[16px] `pb-[24px]'>
 							In today's interconnected world, reaching new markets is crucial for growth. At ValueBridge HQ,
 							we enable international enterprises to access local markets effortlessly
 						</p>
-					</div>
+					</FadeIn>
 				</div>
 				<Tools
 					toolsData={[

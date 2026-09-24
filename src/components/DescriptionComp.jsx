@@ -1,15 +1,16 @@
 import { Link } from 'react-router-dom';
+import { FadeIn } from './Motion';
 
 const DescriptionComp = ({ minTitle, title, subTitle, link, linkText }) => {
 	return (
 		<section
 			className='
-            pt-[40px]
-			lg:pt-[80px]'
+            pt-16
+			lg:pt-28
+			bg-[#f7f7f5]'
 			// lg:pb-[150px]
 		>
-			<div
-				// md:max-w-6xl
+			<FadeIn
 				className='container
 				mx-auto
 			px-7
@@ -17,22 +18,22 @@ const DescriptionComp = ({ minTitle, title, subTitle, link, linkText }) => {
 			>
 				<div className='lg:w-[665px]'>
 					{minTitle && (
-						<h5 className='pb-[11px] text-[18px] leading-[35px] font-[600] '>
+						<h5 className='pb-[11px] text-[20px] leading-[35px] font-[600] '>
 							{minTitle}
 						</h5>
 					)}
-					<h2 className='font-[600] text-[30px] lg:text-[40px] lg:leading-[50px]'>
+					<h2 className='font-semibold text-[36px] lg:text-[58px] lg:leading-[1.08] tracking-[-0.04em] text-[#101828]'>
 						{title}
 					</h2>
 
-					<p className='font-[400px] text-[20px] text-[#101828] leading-[36px] py-[16px] `pb-[24px]'>
+					<p className='font-[400px] text-[22px] text-[#101828] leading-[36px] py-[16px] `pb-[24px]'>
 						{subTitle}
 					</p>
 
 					{link === true && (
 						<Link
 							to='#'
-							className='flex items-center text-[#0074FF] text-[18px] gap-4 leading-[35px] underline'
+							className='flex items-center text-[#0074FF] text-[20px] gap-4 leading-[35px] underline'
 						>
 							{linkText}
 							<svg
@@ -50,7 +51,7 @@ const DescriptionComp = ({ minTitle, title, subTitle, link, linkText }) => {
 						</Link>
 					)}
 				</div>
-			</div>
+			</FadeIn>
 		</section>
 	);
 };

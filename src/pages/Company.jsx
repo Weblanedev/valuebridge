@@ -4,21 +4,29 @@ import layersImg from '../assets/layers.svg';
 import trustImg from '../assets/trust.svg';
 import { Button } from '../components/CustomButtons';
 import DescriptionComp from '../components/DescriptionComp';
+import { FadeIn } from '../components/Motion';
 
 const Company = () => {
 	return (
 		<>
 			<section
 				className={`
-			bg-blue-950
+			relative overflow-hidden
+			bg-[#0c2474]
 			 lg:pt-[120px]
 			lg:pb-[150px]
 			text-white
 
 	`}
 			>
+				<div className='pointer-events-none absolute inset-0' aria-hidden='true'>
+					<div className='absolute -left-16 top-16 h-64 w-36 rounded-[2.5rem] bg-[#16348f]/70' />
+					<div className='absolute left-[12%] top-10 h-[340px] w-[280px] rounded-[2.75rem] bg-[#14307f]' />
+					<div className='absolute right-[8%] top-8 h-80 w-72 rounded-[3rem] bg-[#1a3d9e]/80' />
+					<div className='absolute left-[20%] -bottom-8 h-24 w-72 rounded-[2rem] bg-[#102a78]' />
+				</div>
 				<div
-					className='container mx-auto
+					className='relative z-10 container mx-auto
 
 
 			px-7
@@ -39,14 +47,14 @@ const Company = () => {
 					'
 							// lg:pr-[45px]
 						>
-							<p className='font-[600] text-[16px] leading-[35px]'>
+							<p className='font-[600] text-[18px] leading-[35px]'>
 								WHO WE ARE
 							</p>
 							<h1
-								className='text-[28px]
+								className='text-[31px]
 								lg:w-[710px]
 								mx-auto
-					lg:text-[48px] font-[600] lg:leading-[53px]
+					lg:text-[54px] font-[600] lg:leading-[53px]
 					 '
 							>
 								Empowering Businesses with Global Payment Solutions
@@ -57,7 +65,7 @@ const Company = () => {
 							lg:pt-[38px]
 							font-[400]
 							pb-[25px]
-							text-[16px] lg:text-[20px] lg:leading-[35px]'
+							text-[18px] lg:text-[22px] lg:leading-[35px]'
 							>
 								At ValueBridge HQ, we pride ourselves on having a talented and diverse team dedicated to advancing our mission and delivering exceptional payment solutions to our valued clients.
 							</p>
@@ -68,7 +76,7 @@ const Company = () => {
 						pb-[25px]
 						lg:pb-[38px]
 						font-[400]
-						text-[16px] lg:text-[20px] lg:leading-[35px]'
+						text-[18px] lg:text-[22px] lg:leading-[35px]'
 							>
 							We believe that the best innovations stem from diverse perspectives and collective intelligence. By fostering a collaborative environment, we empower our team members to excel, ensuring that our clients have access to state-of-the-art payment solutions.
 							</p>
@@ -110,7 +118,7 @@ const Company = () => {
 				className='container
 			mx-auto px-7 pt-[45px] pb-[70px]'
 			>
-				<div className='grid lg:grid-cols-3 gap-8 lg:gap-[50px]'>
+				<FadeIn className='grid lg:grid-cols-3 gap-8 lg:gap-[50px]'>
 					<div
 						className='grid grid-cols-1
 						gap-[8.97px]
@@ -130,10 +138,10 @@ const Company = () => {
 							className='text-center
 						'
 						>
-							<h3 className='font-[500] text-[21px] leading-[32px] text-black pb-[4px]'>
+							<h3 className='font-[500] text-[24px] leading-[32px] text-black pb-[4px]'>
 								Fast track last-mile settlements
 							</h3>
-							<p className='font-[400] leading-[28px] text-[#344363] text-[16px]'>
+							<p className='font-[400] leading-[28px] text-[#344363] text-[18px]'>
 								Settle your global partners and users in their local currency
 								easily and quickly without complicated treasury management ops.
 							</p>
@@ -157,11 +165,11 @@ const Company = () => {
 						'
 							// pt-[34px]
 						>
-							<h3 className='font-[500] text-[21px] leading-[32px] text-black pb-[4px]'>
+							<h3 className='font-[500] text-[24px] leading-[32px] text-black pb-[4px]'>
 								Automate financial layers
 							</h3>
 
-							<p className='font-[400] leading-[28px] text-[#344363] text-[16px]'>
+							<p className='font-[400] leading-[28px] text-[#344363] text-[18px]'>
 								Build for scale from the beginning by using our APIs to automate
 								all your financial transactions and processes.
 							</p>
@@ -188,17 +196,17 @@ h-full
 							'
 							// pt-[34px]
 						>
-							<h3 className='font-[500] text-[21px] leading-[32px] text-black pb-[4px]'>
+							<h3 className='font-[500] text-[24px] leading-[32px] text-black pb-[4px]'>
 								Build trust and transparency
 							</h3>
 
-							<p className='font-[400] leading-[28px] text-[#344363] text-[16px]'>
+							<p className='font-[400] leading-[28px] text-[#344363] text-[18px]'>
 								Provide more data points and analytics than your competitors
 								with our suite of open transaction services.
 							</p>
 						</div>
 					</div>
-				</div>
+				</FadeIn>
 			</section>
 
 			<section
@@ -214,12 +222,12 @@ h-full
 			text-center
 			'
 				>
-					<div className='flex flex-col lg:w-[716px] items-center mx-auto justify-center'>
-						<h2 className='font-[600] text-[30px] lg:text-[40px] lg:leading-[59px]'>
+					<FadeIn className='flex flex-col lg:w-[716px] items-center mx-auto justify-center'>
+						<h2 className='font-[600] text-[34px] lg:text-[45px] lg:leading-[59px]'>
 							Come work with us
 						</h2>
 
-						<p className='font-[400px] text-[20px] text-[#101828] leading-[35px] py-[16px] pb-[24px]'>
+						<p className='font-[400px] text-[22px] text-[#101828] leading-[35px] py-[16px] pb-[24px]'>
 							We are always on the lookout for talented individuals who share
 							our vision. Check our Careers page to explore opportunities to
 							join our exceptional team
@@ -232,7 +240,7 @@ h-full
 								bgColor={true}
 							/>
 						</Link>
-					</div>
+					</FadeIn>
 				</div>
 			</section>
 		</>

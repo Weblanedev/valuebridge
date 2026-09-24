@@ -67,11 +67,11 @@ const CryptoSwaps = () => {
 			'
 				>
 					<div className='lg:w-[665px]'>
-						<h2 className='font-[600] text-[30px] lg:text-[40px] lg:leading-[50px]'>
+						<h2 className='font-[600] text-[34px] lg:text-[45px] lg:leading-[50px]'>
 							Benefits
 						</h2>
 
-						<p className='font-[400px] text-[20px] text-[#101828] leading-[36px] py-[16px] pb-[24px]'>
+						<p className='font-[400px] text-[22px] text-[#101828] leading-[36px] py-[16px] pb-[24px]'>
 							Whether you're looking to diversify your portfolio, take advantage
 							of market opportunities, or simply exchange your digital assets
 							efficiently, our platform provides the tools and resources you

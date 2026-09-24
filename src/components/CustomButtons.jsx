@@ -1,4 +1,5 @@
 import { Disclosure } from '@headlessui/react';
+import { motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 
 const className = (...classes) => {
@@ -6,14 +7,17 @@ const className = (...classes) => {
 };
 
 export const Button = ({ btnText, bgColor, icon, fullWidth }) => (
-	<button
+	<motion.button
 		type={fullWidth === true ? 'submit' : 'button'}
+		whileHover={{ scale: 1.04, y: -2 }}
+		whileTap={{ scale: 0.98 }}
+		transition={{ duration: 0.2 }}
 		className={className(
 			fullWidth === true
-				? 'w-full flex bg-blue-950 text-white items-center justify-center font-[500] text-[18px] rounded-3xl leading-[24px] py-[12px] px-[16px] gap-[12px]'
+				? 'w-full flex bg-blue-950 text-white items-center justify-center font-[500] text-[20px] rounded-3xl leading-[24px] py-[12px] px-[16px] gap-[12px]'
 				: bgColor === true
-				? 'flex bg-blue-950 text-white items-center font-[500] text-[18px] leading-[24px] py-[12px] rounded-3xl px-[16px] gap-[12px]'
-				: 'flex bg-white text-black items-center font-[500] text-[18px] leading-[24px] py-[12px] rounded-3xl px-[16px] gap-[12px]'
+				? 'flex bg-blue-950 text-white items-center font-[500] text-[20px] leading-[24px] py-[12px] rounded-3xl px-[16px] gap-[12px]'
+				: 'flex bg-white text-black items-center font-[500] text-[20px] leading-[24px] py-[12px] rounded-3xl px-[16px] gap-[12px]'
 		)}
 	>
 		{btnText}
@@ -31,7 +35,7 @@ export const Button = ({ btnText, bgColor, icon, fullWidth }) => (
 				/>
 			</svg>
 		)}
-	</button>
+	</motion.button>
 );
 export const SignUpButton = () => (
 	<Disclosure.Button

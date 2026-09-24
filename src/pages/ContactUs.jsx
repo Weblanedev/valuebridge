@@ -1,11 +1,13 @@
 import { Button } from '../components/CustomButtons';
+import { FadeIn } from '../components/Motion';
 
 const ContactUs = () => {
 	return (
 		<>
 			<section
 				className={`
-			bg-blue-950
+			relative overflow-hidden
+			bg-[#0c2474]
 			 lg:pt-[120px]
 			 pb-[50px]
 			 text-white
@@ -13,8 +15,14 @@ const ContactUs = () => {
 			 mb-[100px]
 			 `}
 			>
+				<div className='pointer-events-none absolute inset-0' aria-hidden='true'>
+					<div className='absolute -left-16 top-16 h-64 w-36 rounded-[2.5rem] bg-[#16348f]/70' />
+					<div className='absolute left-[8%] top-10 h-[340px] w-[260px] rounded-[2.75rem] bg-[#14307f]' />
+					<div className='absolute right-[4%] top-8 h-72 w-64 rounded-[3rem] bg-[#1a3d9e]/80' />
+					<div className='absolute left-[18%] -bottom-8 h-24 w-72 rounded-[2rem] bg-[#102a78]' />
+				</div>
 				<div
-					className='container mx-auto
+					className='relative z-10 container mx-auto
 			px-7
 			'
 				>
@@ -30,12 +38,12 @@ const ContactUs = () => {
 					lg:pr-[45px]
 					'
 						>
-							<p className='font-[600] text-[16px] leading-[35px]'>
+							<p className='font-[600] text-[18px] leading-[35px]'>
 								CONTACT US
 							</p>
 							<h1
-								className='text-[28px]
-					lg:text-[48px] font-[600] lg:leading-[53px]
+								className='text-[31px]
+					lg:text-[54px] font-[600] lg:leading-[53px]
 					 '
 							>
 								Get in touch with our team
@@ -45,7 +53,7 @@ const ContactUs = () => {
 								lg:pt-[38px]
 								font-[400]
 								pb-[21px]
-								text-[16px] lg:text-[20px] lg:leading-[35px]'
+								text-[18px] lg:text-[22px] lg:leading-[35px]'
 								// lg:pb-[38px]
 							>
 								Have a question, need assistance, or simply want to learn more?
@@ -55,7 +63,7 @@ const ContactUs = () => {
 							<div className='grid grid-cols-1'>
 								<div className='pb-[400px]'>
 									<h4
-										className='text-[20px] font-[600] lg:leading-[35px]
+										className='text-[22px] font-[600] lg:leading-[35px]
 					 '
 									>
 										Send us a mail
@@ -63,7 +71,7 @@ const ContactUs = () => {
 									<p
 										className='
 									font-[400]
-									text-[18px] leading-[35px]'
+									text-[20px] leading-[35px]'
 									>
 										info@Valuebridgehq.com
 									</p>
@@ -75,7 +83,7 @@ const ContactUs = () => {
 					'
 								>
 									<h4
-										className='text-[20px] font-[600] lg:leading-[35px]
+										className='text-[22px] font-[600] lg:leading-[35px]
 					 '
 									>
 										Call us
@@ -83,14 +91,14 @@ const ContactUs = () => {
 									<p
 										className='
 									font-[400]
-									text-[18px] leading-[35px]'
+									text-[20px] leading-[35px]'
 									>
 										+234 913 935 1682
 									</p>
 								</div> */}
 								{/* <div>
 									<h4
-										className='text-[20px] font-[600] lg:leading-[35px]
+										className='text-[22px] font-[600] lg:leading-[35px]
 					 '
 									>
 										Visit us
@@ -98,7 +106,7 @@ const ContactUs = () => {
 									<p
 										className='
 									font-[400]
-									text-[18px] leading-[35px]
+									text-[20px] leading-[35px]
 									'
 									>
 										212, King Street West,
@@ -110,7 +118,7 @@ const ContactUs = () => {
 								</div> */}
 							</div>
 						</div>
-						<div className='order-first lg:order-last'>
+						<FadeIn className='order-first lg:order-last' delay={0.12}>
 							<div className='lg:relative'>
 								<div
 									className='lg:absolute  bg-[#FCFCFD]
@@ -131,7 +139,7 @@ const ContactUs = () => {
 										<div className='sm:col-span-3'>
 											<label
 												htmlFor='first-name'
-												className='block text-[18px] font-[500] leading-[19px] text-black'
+												className='block text-[20px] font-[500] leading-[19px] text-black'
 											>
 												First name<span className='text-[#E94700]'>*</span>
 											</label>
@@ -148,7 +156,7 @@ const ContactUs = () => {
 										<div className='sm:col-span-3'>
 											<label
 												htmlFor='last-name'
-												className='block text-[18px] font-[500] leading-[19px] text-black'
+												className='block text-[20px] font-[500] leading-[19px] text-black'
 											>
 												Last name<span className='text-[#E94700]'>*</span>
 											</label>
@@ -165,7 +173,7 @@ const ContactUs = () => {
 										<div className='sm:col-span-full'>
 											<label
 												htmlFor='company'
-												className='block text-[18px] font-[500] leading-[19px] text-black'
+												className='block text-[20px] font-[500] leading-[19px] text-black'
 											>
 												Company Name<span className='text-[#E94700]'>*</span>
 											</label>
@@ -182,7 +190,7 @@ const ContactUs = () => {
 										<div className='sm:col-span-full'>
 											<label
 												htmlFor='email'
-												className='block text-[18px] font-[500] leading-[19px] text-black'
+												className='block text-[20px] font-[500] leading-[19px] text-black'
 											>
 												Email address<span className='text-[#E94700]'>*</span>
 											</label>
@@ -200,7 +208,7 @@ const ContactUs = () => {
 										<div className='col-span-full'>
 											<label
 												htmlFor='phone'
-												className='block text-[18px] font-[500] leading-[19px] text-black'
+												className='block text-[20px] font-[500] leading-[19px] text-black'
 											>
 												Phone number<span className='text-[#E94700]'>*</span>
 											</label>
@@ -217,7 +225,7 @@ const ContactUs = () => {
 										<div className='col-span-full'>
 											<label
 												htmlFor='about'
-												className='block text-[18px] font-[500] leading-[19px] text-black'
+												className='block text-[20px] font-[500] leading-[19px] text-black'
 											>
 												I want to enquire
 												<span className='text-[#E94700]'>*</span>
@@ -246,7 +254,7 @@ const ContactUs = () => {
 									</div>
 								</div>
 							</div>
-						</div>
+						</FadeIn>
 					</div>
 				</div>
 			</section>

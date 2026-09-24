@@ -47,11 +47,11 @@ const AllAPIs = () => {
 			'
 				>
 					<div className='lg:w-[665px]'>
-						<h2 className='font-[600] text-[30px] lg:text-[40px] lg:leading-[50px]'>
+						<h2 className='font-[600] text-[34px] lg:text-[45px] lg:leading-[50px]'>
 							All the tools you need to build on crypto
 						</h2>
 
-						<p className='font-[400px] text-[20px] text-[#101828] leading-[36px] py-[16px] `pb-[24px]'>
+						<p className='font-[400px] text-[22px] text-[#101828] leading-[36px] py-[16px] `pb-[24px]'>
 							Build and launch global financial services quickly and seamlessly
 							with our all in one product suite of treasury, payments, and
 							last-mile settlement services
@@ -110,7 +110,7 @@ const AllAPIs = () => {
 				className='
 				py-[72px]
 			lg:px-[61px]
-			bg-blue-950
+			bg-[#0c2474]
 			'
 			>
 				<div
@@ -123,31 +123,31 @@ const AllAPIs = () => {
 						'
 					>
 						<div className='text-white lg:w-[510px] pt-[20px]'>
-							<h2 className='font-[500] text-[36px] leading-[40px]'>
+							<h2 className='font-[500] text-[40px] leading-[40px]'>
 								Build on Primeswitch
 							</h2>
-							<p className='pt-[14px] pb-[24px] font-[400] text-[18px] leading-[30px] text-[#F6F7F8] lg:w-[508px]'>
+							<p className='pt-[14px] pb-[24px] font-[400] text-[20px] leading-[30px] text-[#F6F7F8] lg:w-[508px]'>
 								Automate payment processes and abstract away complexity so you
 								can build new product experiences faster
 							</p>
-							<p className='pb-[16px] font-[400] text-[16px] leading-[30px] text-[#F6F7F8]'>
+							<p className='pb-[16px] font-[400] text-[18px] leading-[30px] text-[#F6F7F8]'>
 								With our APIs you can;
 							</p>
 							<div className='px-7 pb-[24px]'>
 								<ul className='list-disc'>
-									<li className='font-[400] text-[16px] leading-[30px] '>
+									<li className='font-[400] text-[18px] leading-[30px] '>
 										Make payins and payouts
 									</li>
-									<li className='font-[400] text-[16px] leading-[30px] py-[16px]'>
+									<li className='font-[400] text-[18px] leading-[30px] py-[16px]'>
 										Create and manage wallets and virtual accounts
 									</li>
-									<li className='font-[400] text-[16px] leading-[30px]'>
+									<li className='font-[400] text-[18px] leading-[30px]'>
 										Access multi-currency accounts
 									</li>
-									<li className='font-[400] text-[16px] leading-[30px] py-[16px]'>
+									<li className='font-[400] text-[18px] leading-[30px] py-[16px]'>
 										Perform crypto-fiat swaps and vice versa
 									</li>
-									<li className='font-[400] text-[16px] leading-[30px]'>
+									<li className='font-[400] text-[18px] leading-[30px]'>
 										Manage payments across all supported accounts
 									</li>
 								</ul>
@@ -156,7 +156,7 @@ const AllAPIs = () => {
 								to='#'
 								// pb-[71px]
 								className='
-								 flex items-center text-[#84ADFF] text-[18px] gap-4 leading-[35px] underline font-[500]'
+								 flex items-center text-[#84ADFF] text-[20px] gap-4 leading-[35px] underline font-[500]'
 							>
 								Explore our docs
 								<svg
@@ -202,10 +202,10 @@ const AllAPIs = () => {
 							// w-[674px]
 						>
 							<div>
-								<h4 className='font-[500] leading-[15px] text-[14px] uppercase text-[#00297A]'>
+								<h4 className='font-[500] leading-[15px] text-[16px] uppercase text-[#00297A]'>
 									Payment Rails
 								</h4>
-								<h2 className='mt-[16px] mb-[24px] font-[500] text-[16px] lg:text-[32px] leading-[35px] text-[#101828]'>
+								<h2 className='mt-[16px] mb-[24px] font-[500] text-[18px] lg:text-[36px] leading-[35px] text-[#101828]'>
 									Move fiat easily and confidently
 								</h2>
 							</div>
@@ -216,14 +216,14 @@ const AllAPIs = () => {
 							/>
 							<div className='px-7 pt-[23px] pb-[31px]'>
 								<ul className='list-disc'>
-									<li className='font-[400] text-[16px] leading-[18px] '>
+									<li className='font-[400] text-[18px] leading-[18px] '>
 										Centralize and automate payments across banks, payment
 										methods
 									</li>
-									<li className='font-[400] text-[16px] leading-[18px] py-[16px]'>
+									<li className='font-[400] text-[18px] leading-[18px] py-[16px]'>
 										Track returned payments in real time using webhooks, and API
 									</li>
-									<li className='font-[400] text-[16px] leading-[18px] '>
+									<li className='font-[400] text-[18px] leading-[18px] '>
 										Easy to integrate, reducing your time to market
 									</li>
 								</ul>
@@ -233,7 +233,7 @@ const AllAPIs = () => {
 								// pb-[71px]
 								className='
 								px-3
-								 flex items-center text-[#0074FF] text-[16px] gap-4 leading-[18px] underline font-[400]'
+								 flex items-center text-[#0074FF] text-[18px] gap-4 leading-[18px] underline font-[400]'
 							>
 								Learn more
 								<svg
@@ -252,10 +252,10 @@ const AllAPIs = () => {
 						</div>
 						<div className='lg:h-[644px]'>
 							<div>
-								<h4 className='font-[500] leading-[15px] text-[14px] uppercase text-[#00297A]'>
+								<h4 className='font-[500] leading-[15px] text-[16px] uppercase text-[#00297A]'>
 									SETTLEMENTS
 								</h4>
-								<h2 className='mt-[16px] mb-[24px] font-[500] text-[16px] lg:text-[32px] leading-[35px] text-[#101828]'>
+								<h2 className='mt-[16px] mb-[24px] font-[500] text-[18px] lg:text-[36px] leading-[35px] text-[#101828]'>
 									Streamline your settlement processes
 								</h2>
 							</div>
@@ -268,14 +268,14 @@ const AllAPIs = () => {
 							</div>
 							<div className='ps-7 pt-[23px] pb-[31px]'>
 								<ul className='list-disc'>
-									<li className='font-[400] text-[16px] leading-[18px] '>
+									<li className='font-[400] text-[18px] leading-[18px] '>
 										Easy API Integration to settlement your customers In 115+
 										Countries
 									</li>
-									<li className='font-[400] text-[16px] leading-[18px] py-[16px]'>
+									<li className='font-[400] text-[18px] leading-[18px] py-[16px]'>
 										Competitive, Volume-Based pricing you can always rely on
 									</li>
-									<li className='font-[400] text-[16px] leading-[18px] '>
+									<li className='font-[400] text-[18px] leading-[18px] '>
 										Direct payouts to the local currency of your recipient,
 										business or vendor
 									</li>
@@ -286,7 +286,7 @@ const AllAPIs = () => {
 								// pb-[71px]
 								className='
 								px-3
-								 flex items-center text-[#0074FF] text-[16px] gap-4 leading-[18px] underline font-[400]'
+								 flex items-center text-[#0074FF] text-[18px] gap-4 leading-[18px] underline font-[400]'
 							>
 								Learn more
 								<svg

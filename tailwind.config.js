@@ -4,7 +4,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				graphik: ['Graphik', 'sans-serif']
+				sans: ['Bricolage Grotesque', 'sans-serif'],
+				graphik: ['Bricolage Grotesque', 'sans-serif']
 			}
 		}
 	},
