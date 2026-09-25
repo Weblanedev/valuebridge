@@ -3,8 +3,8 @@
 import DescriptionComp from '../components/DescriptionComp';
 // import { Inter } from 'next/font/google';
 // const inter = Inter({ subsets: ['latin'] });
-import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import corporateImg from '../assets/corporate-treasury.svg';
 import heroImg from '../assets/hero-img.svg';
 import cash from '../assets/icons/cash.svg';
@@ -15,6 +15,7 @@ import settlement from '../assets/icons/settlements.svg';
 import swaps from '../assets/icons/swaps.svg';
 import treasury from '../assets/icons/treasury.svg';
 import wallets from '../assets/icons/wallet.svg';
+import usdtImg from '../assets/USDT.svg';
 
 import currencyImg from '../assets/trust.svg';
 import psImg from '../assets/layers.svg';
@@ -25,46 +26,97 @@ import worldImg from '../assets/world.svg';
 import { CountUp, FadeIn } from '../components/Motion';
 import Tools from '../components/Tools';
 
-const paymentWords = ['Payment', 'Payouts', 'Settlements', 'Collections', 'Transfers', 'Checkout'];
+const brandCards = [
+	{
+		title: 'Crossborder',
+		href: 'https://goldstack.co/',
+		icon: '/crossboder.png',
+		iconClass: 'pointer-events-none absolute right-4 top-4 h-11 w-11 opacity-90 [filter:brightness(0)_invert(1)]',
+		copy: 'Payments, FX, and treasury for global businesses.',
+		float: 3.4,
+	},
+	{
+		title: 'Payments',
+		href: 'https://www.korahq.com/',
+		icon: '/paument.png',
+		iconClass: 'pointer-events-none absolute right-4 top-4 h-11 w-11 opacity-90 [filter:brightness(0)_invert(1)]',
+		copy: 'Pan-African checkout, payouts, and settlements.',
+		float: 3.9,
+	},
+	{
+		title: 'Stablecoin',
+		href: 'https://www.trytreasura.com/',
+		icon: usdtImg,
+		iconClass: 'pointer-events-none absolute right-4 top-4 h-11 w-11',
+		copy: 'Tools to build multi-currency financial products.',
+		float: 3.2,
+	},
+	{
+		title: 'AI',
+		href: 'https://www.korahq.com/kovo',
+		icon: '/ai.png',
+		iconClass: 'pointer-events-none absolute right-3 top-3 h-12 w-12 opacity-90 [filter:brightness(0)_invert(1)]',
+		copy: 'Payments inside chat. Join the waitlist.',
+		float: 2.8,
+	},
+];
 
-export default function Home() {
-	const [wordIndex, setWordIndex] = useState(0);
-	const [typed, setTyped] = useState('');
-	const [deleting, setDeleting] = useState(false);
+const HEADLINE = 'Future of money';
+const MONEY_START = 'Future of '.length;
+let headlinePlayed = false;
+
+function TypedHeadline() {
+	const [count, setCount] = useState(headlinePlayed ? HEADLINE.length : 0);
+	const [done, setDone] = useState(headlinePlayed);
 
 	useEffect(() => {
-		const word = paymentWords[wordIndex];
-		const pause = !deleting && typed === word;
-		const done = deleting && typed === '';
-		const delay = pause ? 1400 : done ? 280 : deleting ? 45 : 90;
-
-		const timer = setTimeout(() => {
-			if (pause) {
-				setDeleting(true);
-				return;
+		if (headlinePlayed) return undefined;
+		let i = 0;
+		const id = setInterval(() => {
+			i += 1;
+			setCount(i);
+			if (i >= HEADLINE.length) {
+				clearInterval(id);
+				headlinePlayed = true;
+				setDone(true);
 			}
-			if (done) {
-				setDeleting(false);
-				setWordIndex((index) => (index + 1) % paymentWords.length);
-				return;
-			}
-			setTyped(word.slice(0, typed.length + (deleting ? -1 : 1)));
-		}, delay);
+		}, 62);
+		return () => clearInterval(id);
+	}, []);
 
-		return () => clearTimeout(timer);
-	}, [typed, deleting, wordIndex]);
+	const shown = HEADLINE.slice(0, count);
 
+	return (
+		<h1
+			className='mx-auto pt-8 pb-8 text-[72px] font-semibold leading-[0.95] tracking-[-0.05em] sm:text-[104px] lg:text-[148px]'
+		>
+			<span className='block whitespace-nowrap'>
+				{shown.slice(0, MONEY_START)}
+				<span className='text-[#7eb6ff]'>{shown.slice(MONEY_START)}</span>
+				{!done && (
+					<motion.span
+						aria-hidden='true'
+						className='ml-[0.04em] inline-block h-[0.78em] w-[0.045em] translate-y-[0.04em] bg-current align-middle'
+						animate={{ opacity: [1, 0, 1] }}
+						transition={{ duration: 0.7, repeat: Infinity, ease: 'linear' }}
+					/>
+				)}
+			</span>
+		</h1>
+	);
+}
+
+export default function Home() {
 	return (
 		<>
 			<section
 				className={`
 			relative overflow-hidden
+			flex flex-col justify-center
+			min-h-[calc(100svh-5.5rem)]
 			bg-[#0c2474]
 			text-white
-			pt-16
-			pb-0
-			lg:pt-24
-			lg:pb-0
+			py-16
 	`}
 			>
 				<div className='pointer-events-none absolute inset-0' aria-hidden='true'>
@@ -119,67 +171,51 @@ items-center
 						'
 					// w-full
 					>
-						<FadeIn
+						<div
 							className='
 							py-[14px]
 							md:pb-[27px] md:pt-[0px]
 							text-center
 							'
-						// pr-[95px]
-						// lg:w-[387px]
-						// justify-center
-						// col-start-1
-						// end-6
-						// pr-[45px]
-						// px-6z
 						>
-							<h1
-								className='text-[58px]
-					sm:text-[81px]
-					lg:text-[116px] font-semibold leading-[0.95] tracking-[-0.05em] mx-auto
-					 '
-							>
-								<span className='block whitespace-nowrap'>
-									Seamless{' '}
-									<span className='inline-grid text-left text-[#7eb6ff]'>
-										<span className='invisible col-start-1 row-start-1' aria-hidden='true'>
-											Settlements|
-										</span>
-										<span className='col-start-1 row-start-1'>
-											{typed}
-											<span className='animate-pulse'>|</span>
-										</span>
-									</span>
-								</span>
-								<span className='block'>Solutions</span>
-							</h1>
+							<TypedHeadline />
+						<FadeIn
+							className='text-center'
+						>
 							<p
-								className='mx-auto max-w-xl pt-8 pb-20 text-[18px] font-normal leading-8 text-white/70 lg:text-[20px]'
+								className='mx-auto max-w-3xl pt-8 pb-10 text-[18px] font-normal leading-8 text-white/70 lg:text-[22px]'
 							>
-								ValueBridge connects your business to secure, efficient payments, so you can focus on growth.
+								ValueBridge is the company behind the businesses building the future of money, from cross-border rails to payments, stablecoins, and AI.
 							</p>
 						</FadeIn>
-						<FadeIn
-							delay={0.15}
-							className='w-full'
-						// w-full
-						// lg:pr-0
-						// lg:col-span-2
-						// bg-red-900
-						// ${location === '/' && 'overflow-visible'}
-
-						// col-start-6
-						//  w-fit
-						>
-							<img
-								src={"https://cdn.prod.website-files.com/62dc80e748e94840febe84c5/639b1e29634eb2c32d000316_dashboard-img.svg"}
-								alt='hero-img'
-								// className='w-full'
-								// className='lg:h-full lg:w-full'
-								className='relative w-full max-w-5xl mx-auto drop-shadow-2xl'
-							// h-[471.03px]
-							/>
-						</FadeIn>
+						</div>
+						<div className='grid w-full max-w-5xl grid-cols-1 gap-5 pb-16 sm:grid-cols-2 lg:grid-cols-4'>
+							{brandCards.map((card, index) => (
+								<motion.a
+									key={card.title}
+									href={card.href}
+									target='_blank'
+									rel='noreferrer'
+									initial={{ opacity: 0, y: 28 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.7, delay: 0.15 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+									whileHover={{ y: -6, borderColor: '#7eb6ff', backgroundColor: 'rgba(255,255,255,0.15)' }}
+									className='relative overflow-hidden rounded-[28px] border border-white/20 bg-white/10 p-6 text-left outline-none backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-[#7eb6ff]'
+								>
+									<motion.img
+										src={card.icon}
+										alt=''
+										animate={{ y: [0, -5, 0] }}
+										transition={{ duration: card.float, repeat: Infinity, ease: 'easeInOut' }}
+										className={card.iconClass}
+									/>
+									<span className='relative block pr-14 text-[22px] font-semibold text-white'>{card.title}</span>
+									<span className='relative mt-3 block text-[16px] font-normal leading-6 text-white/70'>
+										{card.copy}
+									</span>
+								</motion.a>
+							))}
+						</div>
 					</div>
 				</div>
 			</section>

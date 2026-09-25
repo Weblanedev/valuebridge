@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/Logo.svg';
 import { Button } from '../components/CustomButtons';
-import { DropdownNavLink, DropdownNavLinkMobile } from './DropdownNavLink';
+import { DropdownNavLinkMobile } from './DropdownNavLink';
 // {
 // 	name: 'Products',
 // 	to: '/products',
@@ -61,7 +61,7 @@ const Navbar = () => {
 											ValueBridge.
 										</NavLink>
 									</div>
-									<div className='hidden sm:flex items-center gap-5 ml-24 text-[20px] font-medium text-white'>
+									<div className='hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8 text-[20px] font-medium text-white'>
 										<a href='https://goldstack.co/' target='_blank' rel='noreferrer' className='transition-colors hover:text-[#7eb6ff]'>
 											Crossborder
 										</a>
@@ -71,107 +71,9 @@ const Navbar = () => {
 										<a href='https://www.trytreasura.com/' target='_blank' rel='noreferrer' className='transition-colors hover:text-[#7eb6ff]'>
 											Stablecoin
 										</a>
-									</div>
-									<div
-										className='hidden lg:block ml-auto'
-									>
-										<div
-											className='flex space-x-16
-											ps-10
-											text-center
-											mx-auto
-											items-center
-											'
-										>
-											<DropdownNavLink />
-
-											{/* <div className=' text-white'>
-												<button
-													className='font-[400]
-												text-[18px]
-												leading-[24px] peer
-												'
-													// transition-all duration-200
-												>
-													Products
-												</button>
-												<div
-													// w-80
-													// after:w-full
-													className='  absolute top-5 z-10
-													after:bg-[#2579FA]
-												after:content-[""] after:inline-block after:absolute after:top-0
-												 after:h-full after:-z-20 after:blur-[2px] after:rounded-lg
-											peer-focus:top-12 peer-focus:opacity-100 peer-focus:visible
-											invisible
-											opacity-0
-											'
-													// transition-all
-													// duration-300
-												>
-													<ul className='py-6 px-3 flex flex-col gap-3 items-start bg-[#2579FA]'>
-														<NavLink
-															// as={NavLink}
-															className='cursor-pointer'
-															to='products/all-apis'
-														>
-															All APIs
-														</NavLink>
-														<NavLink
-															// as='li'
-															className='cursor-pointer'
-															to='products/buy-crypto'
-														>
-															Buy Crypto
-														</NavLink>
-
-														<NavLink
-															// as='li'
-															className='cursor-pointer'
-															to='product/settlements'
-														>
-															Settlements
-														</NavLink>
-														<NavLink
-															// as='li'
-															className='cursor-pointer'
-															to='product/'
-														>
-															Payouts
-														</NavLink>
-														<NavLink
-															// as='li'
-															className='cursor-pointer'
-															to='product/'
-														>
-															Swaps
-														</NavLink>
-														<NavLink
-															// as='li'
-															className='cursor-pointer'
-															to='product/'
-														>
-															Liquidity
-														</NavLink>
-													</ul>
-												</div>
-											</div> */}
-											{navigation.map((navigationItem) => (
-												<NavLink
-													key={navigationItem.name}
-													to={navigationItem.to}
-													className='text-[20px] font-medium'
-													aria-current={
-														navigationItem.current ? 'page' : undefined
-													}
-												>
-													{navigationItem.name}
-												</NavLink>
-											))}
-											<NavLink to='contact' onClick={() => close()}>
-												<Button btnText='Contact Sales' icon={false} />
-											</NavLink>
-										</div>
+										<a href='https://www.korahq.com/kovo' target='_blank' rel='noreferrer' className='transition-colors hover:text-[#7eb6ff]'>
+											AI
+										</a>
 									</div>
 								</div>
 
