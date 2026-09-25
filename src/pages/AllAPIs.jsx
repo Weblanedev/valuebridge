@@ -27,7 +27,7 @@ const AllAPIs = () => {
 			<Hero
 				minTitle='ALL APIS'
 				title='Build multi-currency experiences'
-				subTitle='Primeswitch all-in-one asset independent infrastructure, empowers financial service providers with the tools that they need to build and scale.'
+				subTitle='ValueBridge gives financial service providers the rails, payments, stablecoins, and AI to build and scale.'
 				buttonTxt='Learn More'
 				heroImg={heroImg}
 			/>
@@ -53,8 +53,7 @@ const AllAPIs = () => {
 
 						<p className='font-[400px] text-[22px] text-[#101828] leading-[36px] py-[16px] `pb-[24px]'>
 							Build and launch global financial services quickly and seamlessly
-							with our all in one product suite of treasury, payments, and
-							last-mile settlement services
+							with treasury, payments, stablecoins, and AI in one product suite.
 						</p>
 					</div>
 				</div>
@@ -124,11 +123,10 @@ const AllAPIs = () => {
 					>
 						<div className='text-white lg:w-[510px] pt-[20px]'>
 							<h2 className='font-[500] text-[40px] leading-[40px]'>
-								Build on Primeswitch
+								Build on ValueBridge
 							</h2>
 							<p className='pt-[14px] pb-[24px] font-[400] text-[20px] leading-[30px] text-[#F6F7F8] lg:w-[508px]'>
-								Automate payment processes and abstract away complexity so you
-								can build new product experiences faster
+								Automate rails, payments, and stablecoins, and add AI, so you can build new product experiences faster.
 							</p>
 							<p className='pb-[16px] font-[400] text-[18px] leading-[30px] text-[#F6F7F8]'>
 								With our APIs you can;

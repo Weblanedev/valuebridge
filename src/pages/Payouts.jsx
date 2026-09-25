@@ -56,8 +56,8 @@ const Payouts = () => {
 		<>
 			<Hero
 				minTitle='PAYOUTS'
-				title='Streamlined Global Payout Solutions for Your Business'
-				subTitle='Take your customers global with our payments API'
+				title='Payouts across the future of money'
+				subTitle='Send money to customers and partners in local currency, as part of ValueBridge payments.'
 				buttonTxt='Learn More'
 				heroImg={heroImg}
 			/>
@@ -79,8 +79,7 @@ const Payouts = () => {
 						</h2>
 
 						<p className='font-[400px] text-[22px] text-[#101828] leading-[36px] py-[16px] pb-[24px]'>
-							We understand the complexities involved in managing payments across borders.
-							Our Pay-In services are designed to simplify the process, enabling your business to receive payments from customers around the world effortlessly and securely.
+							Send single and bulk payouts across borders. ValueBridge payments sit alongside cross-border rails, stablecoins, and AI.
 						</p>
 					</div>
 				</div>

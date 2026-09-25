@@ -57,7 +57,7 @@ const Company = () => {
 					lg:text-[54px] font-[600] lg:leading-[53px]
 					 '
 							>
-								Empowering Businesses with Global Payment Solutions
+								The company behind the future of money
 							</h1>
 							<p
 								className='pt-[16px]
@@ -67,7 +67,7 @@ const Company = () => {
 							pb-[25px]
 							text-[18px] lg:text-[22px] lg:leading-[35px]'
 							>
-								At ValueBridge HQ, we pride ourselves on having a talented and diverse team dedicated to advancing our mission and delivering exceptional payment solutions to our valued clients.
+								ValueBridge is the company behind the products building the future of money, from cross-border rails to payments, stablecoins, and AI.
 							</p>
 							<p
 								// pt-[16px]
@@ -78,7 +78,7 @@ const Company = () => {
 						font-[400]
 						text-[18px] lg:text-[22px] lg:leading-[35px]'
 							>
-							We believe that the best innovations stem from diverse perspectives and collective intelligence. By fostering a collaborative environment, we empower our team members to excel, ensuring that our clients have access to state-of-the-art payment solutions.
+							We bring those products together so businesses can move money across borders, settle in local currency and stablecoins, and reach customers in chat.
 							</p>
 							<div
 								className='flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-2
@@ -111,7 +111,7 @@ const Company = () => {
 			<DescriptionComp
 				minTitle='WHY US?'
 				title='Helping our customers build for scale and impact'
-				subTitle='To bridge the gap between businesses and their financial success by providing innovative, secure, and efficient payment processing services that cater to the unique needs of our clients globally.'
+				subTitle='ValueBridge helps businesses build on cross-border rails, payments, stablecoins, and AI.'
 				link={false}
 			/>
 			<section
@@ -142,8 +142,7 @@ const Company = () => {
 								Fast track last-mile settlements
 							</h3>
 							<p className='font-[400] leading-[28px] text-[#344363] text-[18px]'>
-								Settle your global partners and users in their local currency
-								easily and quickly without complicated treasury management ops.
+								Settle your global partners and users in their local currency or in stablecoins, without complicated treasury operations.
 							</p>
 						</div>
 					</div>

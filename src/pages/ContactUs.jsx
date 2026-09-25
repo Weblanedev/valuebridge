@@ -1,19 +1,15 @@
+import { motion } from 'framer-motion';
 import { Button } from '../components/CustomButtons';
 import { FadeIn } from '../components/Motion';
+
+const fieldClass =
+	'mt-1.5 block h-11 w-full rounded-2xl border border-[#e6e8ee] bg-[#f7f7f5] px-4 text-[16px] text-[#101828] outline-none transition placeholder:text-[#98a2b3] focus:border-[#7eb6ff] focus:bg-white focus:ring-2 focus:ring-[#7eb6ff]/40';
 
 const ContactUs = () => {
 	return (
 		<>
 			<section
-				className={`
-			relative overflow-hidden
-			bg-[#0c2474]
-			 lg:pt-[120px]
-			 pb-[50px]
-			 text-white
-			 lg:mb-[0px]
-			 mb-[100px]
-			 `}
+				className='relative flex min-h-[calc(100svh-5.5rem)] flex-col justify-center overflow-hidden bg-[#0c2474] py-8 text-white'
 			>
 				<div className='pointer-events-none absolute inset-0' aria-hidden='true'>
 					<div className='absolute -left-16 top-16 h-64 w-36 rounded-[2.5rem] bg-[#16348f]/70' />
@@ -27,9 +23,7 @@ const ContactUs = () => {
 			'
 				>
 					<div
-						className='grid lg:grid-cols-2
-					w-full gap-0 lg:gap-4
-		'
+						className='grid w-full items-center gap-8 lg:grid-cols-2 lg:gap-10'
 					>
 						<div
 							className='
@@ -49,19 +43,12 @@ const ContactUs = () => {
 								Get in touch with our team
 							</h1>
 							<p
-								className='pt-[16px]
-								lg:pt-[38px]
-								font-[400]
-								pb-[21px]
-								text-[18px] lg:text-[22px] lg:leading-[35px]'
-								// lg:pb-[38px]
+								className='pb-5 pt-4 text-[18px] font-[400] leading-8 lg:text-[22px]'
 							>
-								Have a question, need assistance, or simply want to learn more?
-								Our dedicated team is here to provide you with the support you
-								need.
+								Have a question about cross-border rails, payments, stablecoins, or AI? Our team is here to help.
 							</p>
 							<div className='grid grid-cols-1'>
-								<div className='pb-[400px]'>
+								<div>
 									<h4
 										className='text-[22px] font-[600] lg:leading-[35px]
 					 '
@@ -119,138 +106,130 @@ const ContactUs = () => {
 							</div>
 						</div>
 						<FadeIn className='order-first lg:order-last' delay={0.12}>
-							<div className='lg:relative'>
-								<div
-									className='lg:absolute  bg-[#FCFCFD]
-									h-fit text-black w-full
-									px-[40px]
-									border-[#D0D5DD]
-									rounded-[8px]
-									z-10
-									py-[47px]
-									'
-								>
-									<div
-										className='grid grid-cols-1 gap-x-6
-										gap-y-[24px]
-
-									sm:grid-cols-6'
-									>
-										<div className='sm:col-span-3'>
-											<label
-												htmlFor='first-name'
-												className='block text-[20px] font-[500] leading-[19px] text-black'
-											>
-												First name<span className='text-[#E94700]'>*</span>
+							<div>
+								<div className='w-full rounded-[28px] bg-white px-7 py-7 text-[#101828] shadow-[0_24px_60px_rgba(8,20,70,0.22)]'>
+									<div className='grid grid-cols-1 gap-x-4 gap-y-3.5 sm:grid-cols-6'>
+										<motion.div
+											className='sm:col-span-3'
+											initial={{ opacity: 0, y: 16 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ duration: 0.45, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
+										>
+											<label htmlFor='first-name' className='block text-[15px] font-medium'>
+												First name<span className='text-[#7eb6ff]'>*</span>
 											</label>
-											<div className='mt-[4px]'>
-												<input
-													type='text'
-													name='first-name'
-													id='first-name'
-													className='block w-full rounded-[2px] border-[1px] border-[#D0D5DD] h-[60px]'
-												/>
-											</div>
-										</div>
+											<input
+												type='text'
+												name='first-name'
+												id='first-name'
+												placeholder='Ada'
+												className={fieldClass}
+											/>
+										</motion.div>
 
-										<div className='sm:col-span-3'>
-											<label
-												htmlFor='last-name'
-												className='block text-[20px] font-[500] leading-[19px] text-black'
-											>
-												Last name<span className='text-[#E94700]'>*</span>
+										<motion.div
+											className='sm:col-span-3'
+											initial={{ opacity: 0, y: 16 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ duration: 0.45, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
+										>
+											<label htmlFor='last-name' className='block text-[15px] font-medium'>
+												Last name<span className='text-[#7eb6ff]'>*</span>
 											</label>
-											<div className='mt-[4px]'>
-												<input
-													type='text'
-													name='last-name'
-													id='last-name'
-													className='block w-full rounded-[2px] border-[1px] border-[#D0D5DD] h-[60px]'
-												/>
-											</div>
-										</div>
+											<input
+												type='text'
+												name='last-name'
+												id='last-name'
+												placeholder='Okeke'
+												className={fieldClass}
+											/>
+										</motion.div>
 
-										<div className='sm:col-span-full'>
-											<label
-												htmlFor='company'
-												className='block text-[20px] font-[500] leading-[19px] text-black'
-											>
-												Company Name<span className='text-[#E94700]'>*</span>
+										<motion.div
+											className='sm:col-span-full'
+											initial={{ opacity: 0, y: 16 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ duration: 0.45, delay: 0.19, ease: [0.22, 1, 0.36, 1] }}
+										>
+											<label htmlFor='company' className='block text-[15px] font-medium'>
+												Company name<span className='text-[#7eb6ff]'>*</span>
 											</label>
-											<div className='mt-[4px]'>
-												<input
-													id='company'
-													name='company'
-													type='text'
-													// autocomplete='email'
-													className='block w-full rounded-[2px] border-[1px] border-[#D0D5DD] h-[60px]'
-												/>
-											</div>
-										</div>
-										<div className='sm:col-span-full'>
-											<label
-												htmlFor='email'
-												className='block text-[20px] font-[500] leading-[19px] text-black'
-											>
-												Email address<span className='text-[#E94700]'>*</span>
+											<input
+												id='company'
+												name='company'
+												type='text'
+												placeholder='Your company'
+												className={fieldClass}
+											/>
+										</motion.div>
+										<motion.div
+											className='sm:col-span-full'
+											initial={{ opacity: 0, y: 16 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ duration: 0.45, delay: 0.26, ease: [0.22, 1, 0.36, 1] }}
+										>
+											<label htmlFor='email' className='block text-[15px] font-medium'>
+												Email address<span className='text-[#7eb6ff]'>*</span>
 											</label>
-											<div className='mt-[4px]'>
-												<input
-													id='email'
-													name='email'
-													type='email'
-													// autocomplete='email'
-													className='block w-full rounded-[2px] border-[1px] border-[#D0D5DD] h-[60px]'
-												/>
-											</div>
-										</div>
+											<input
+												id='email'
+												name='email'
+												type='email'
+												placeholder='you@company.com'
+												className={fieldClass}
+											/>
+										</motion.div>
 
-										<div className='col-span-full'>
-											<label
-												htmlFor='phone'
-												className='block text-[20px] font-[500] leading-[19px] text-black'
-											>
-												Phone number<span className='text-[#E94700]'>*</span>
+										<motion.div
+											className='col-span-full'
+											initial={{ opacity: 0, y: 16 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ duration: 0.45, delay: 0.33, ease: [0.22, 1, 0.36, 1] }}
+										>
+											<label htmlFor='phone' className='block text-[15px] font-medium'>
+												Phone number<span className='text-[#7eb6ff]'>*</span>
 											</label>
-											<div className='mt-[4px]'>
-												<input
-													type='text'
-													name='phone'
-													id='phone'
-													className='block w-full rounded-[2px] border-[1px] border-[#D0D5DD] h-[60px]'
-												/>
-											</div>
-										</div>
+											<input
+												type='text'
+												name='phone'
+												id='phone'
+												placeholder='+234'
+												className={fieldClass}
+											/>
+										</motion.div>
 
-										<div className='col-span-full'>
-											<label
-												htmlFor='about'
-												className='block text-[20px] font-[500] leading-[19px] text-black'
-											>
+										<motion.div
+											className='col-span-full'
+											initial={{ opacity: 0, y: 16 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ duration: 0.45, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+										>
+											<label htmlFor='about' className='block text-[15px] font-medium'>
 												I want to enquire
-												<span className='text-[#E94700]'>*</span>
+												<span className='text-[#7eb6ff]'>*</span>
 											</label>
-											<div className='mt-[4px]'>
-												<textarea
-													id='about'
-													name='about'
-													rows='8'
-													className='block w-full rounded-[2px] border-[1px] border-[#D0D5DD] py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400
-													sm:text-sm sm:leading-6
-													'
-													// focus:ring-2 focus:ring-inset focus:ring-indigo-600
-												></textarea>
-											</div>
-										</div>
+											<textarea
+												id='about'
+												name='about'
+												rows='3'
+												placeholder='Tell us about cross-border rails, payments, stablecoins, or AI.'
+												className={`${fieldClass} h-auto resize-none py-3`}
+											></textarea>
+										</motion.div>
 
-										<div className=' col-span-full'>
+										<motion.div
+											className='col-span-full'
+											initial={{ opacity: 0, y: 16 }}
+											animate={{ opacity: 1, y: 0 }}
+											transition={{ duration: 0.45, delay: 0.48, ease: [0.22, 1, 0.36, 1] }}
+										>
 											<Button
 												bgColor={true}
 												btnText='Submit Request'
 												icon={true}
 												fullWidth={true}
 											/>
-										</div>
+										</motion.div>
 									</div>
 								</div>
 							</div>

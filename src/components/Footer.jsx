@@ -9,9 +9,10 @@ const companyLinks = [
 ];
 
 const serviceLinks = [
-	{ name: 'Corporate Treasury', to: '#' },
-	{ name: 'Payments', to: '#' },
-	{ name: 'Foreign Exchange', to: '#' }
+	{ name: 'Crossborder', href: 'https://goldstack.co/' },
+	{ name: 'Payments', href: 'https://www.korahq.com/' },
+	{ name: 'Stablecoin', href: 'https://www.trytreasura.com/' },
+	{ name: 'AI', href: 'https://www.korahq.com/kovo' }
 ];
 
 const Footer = () => {
@@ -28,7 +29,7 @@ const Footer = () => {
 					</div>
 					<div className='relative z-10 mx-auto max-w-4xl py-6 text-center md:py-10'>
 						<h3 className='text-[32px] font-medium leading-[1.15] tracking-[-0.03em] md:text-[48px]'>
-							Ready to take your business to the next level with our payment solutions?
+							Ready to build on the future of money?
 						</h3>
 						<div className='mt-8 flex justify-center'>
 							<Link to='/contact'>
@@ -48,8 +49,7 @@ const Footer = () => {
 								ValueBridge.
 							</Link>
 							<p className='mt-4 max-w-[240px] text-[18px] leading-6 text-[#667085]'>
-								Expand your business globally with our multi-currency payment
-								processing services.
+								Cross-border rails, payments, stablecoins, and AI, together under ValueBridge.
 							</p>
 						</div>
 
@@ -72,13 +72,15 @@ const Footer = () => {
 							<h6 className='text-[20px] font-semibold'>Services</h6>
 							<div className='mt-4 grid gap-3'>
 								{serviceLinks.map((item) => (
-									<Link
+									<a
 										key={item.name}
-										to={item.to}
+										href={item.href}
+										target='_blank'
+										rel='noreferrer'
 										className='text-[18px] text-[#475467] transition-colors hover:text-[#7eb6ff] hover:underline'
 									>
 										{item.name}
-									</Link>
+									</a>
 								))}
 							</div>
 						</div>

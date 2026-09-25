@@ -34,8 +34,8 @@ export const CountUp = ({ to, suffix = '', className = '' }) => {
 	useEffect(() => {
 		if (!inView) return;
 		const controls = animate(0, to, {
-			duration: 1.6,
-			ease,
+			duration: 2.4,
+			ease: 'linear',
 			onUpdate: (latest) => setValue(Math.round(latest))
 		});
 		return () => controls.stop();

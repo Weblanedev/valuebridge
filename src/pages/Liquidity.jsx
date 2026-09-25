@@ -53,8 +53,8 @@ const Liquidity = () => {
 		<>
 			<Hero
 				minTitle='LIQUIDITY'
-				title='Liquidity for peer-to-peer crypto exchanges and marketplaces'
-				subTitle='Take your customers global with our payments API'
+				title='Stablecoin liquidity for exchanges and marketplaces'
+				subTitle='Liquidity in stablecoins, so customers can move value as part of the future of money.'
 				buttonTxt='Learn More'
 				heroImg={heroImg}
 			/>
@@ -76,8 +76,7 @@ const Liquidity = () => {
 						</h2>
 
 						<p className='font-[400px] text-[22px] text-[#101828] leading-[36px] py-[16px] pb-[24px]'>
-							Lorem ipsum dolor sit amet consectetur. Felis viverra habitasse
-							semper cursus pretium neque.
+							Provide stablecoin liquidity for exchanges and marketplaces. ValueBridge pairs that liquidity with payments, cross-border rails, and AI.
 						</p>
 					</div>
 				</div>

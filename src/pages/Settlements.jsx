@@ -58,7 +58,7 @@ const Settlements = () => {
 			<Hero
 				minTitle='SETTLEMENTS'
 				title='Enable international settlement services'
-				subTitle='Simplify and automate your payment and settlement processes across countries'
+				subTitle='Settle across countries in local currency and stablecoins.'
 				buttonTxt='Learn More'
 				heroImg={heroImg}
 			/>
@@ -81,10 +81,7 @@ const Settlements = () => {
 						</h2>
 
 						<p className='font-[400px] text-[22px] text-[#101828] leading-[36px] py-[16px] pb-[24px]'>
-							Receive local payments from customers in their respective
-							currencies effortlessly through our API. With a simple
-							integration, our API enables automated payments to your business
-							customers in multiple currencies.
+							Settle partners in the currency they use, including stablecoins, through one integration. This is part of how ValueBridge builds the future of money.
 						</p>
 					</div>
 				</div>
