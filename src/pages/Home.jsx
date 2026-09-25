@@ -463,7 +463,7 @@ items-center
 					>
 						<div className='grid grid-cols-1 gap-[16px] lg:pr-16 lg:border-r-[0.5px] lg:border-[#B3B3B3] '>
 							<h4 className='font-[400] text-[63px] leading-[68px] text-center text-[#1D2939]'>
-								<CountUp to={20} suffix='M+' />
+								<CountUp to={270} suffix='M' />
 							</h4>
 							<p
 								className='font-[500px] text-[20px] leading-[24px]
@@ -475,7 +475,7 @@ items-center
 						</div>
 						<div className='grid grid-cols-1 gap-[16px] lg:px-16 lg:border-r-[0.5px] lg:backdrop:order-[#B3B3B3] '>
 							<h4 className='font-[400] text-[63px] leading-[68px] text-center text-[#1D2939]'>
-								<CountUp to={2} suffix='K+' />
+								<CountUp to={30} suffix='K' />
 							</h4>
 							<p
 								className='font-[500px] text-[20px] leading-[24px]
@@ -501,7 +501,7 @@ items-center
 
 						<div className='grid grid-cols-1 gap-[16px]'>
 							<h4 className='font-[400] text-[63px] leading-[68px] text-center text-[#1D2939]'>
-								<CountUp to={20} suffix='K' />
+								<CountUp to={100} suffix='K' />
 							</h4>
 							<p
 								className='font-[500px] text-[20px] leading-[24px]
