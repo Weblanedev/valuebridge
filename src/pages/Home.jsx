@@ -185,7 +185,7 @@ items-center
 							<p
 								className='mx-auto max-w-3xl pt-8 pb-10 text-[18px] font-normal leading-8 text-white/70 lg:text-[22px]'
 							>
-								ValueBridge is the company behind the businesses building the future of money, from cross-border rails to payments, stablecoins, and AI.
+								<span className='font-semibold text-white'>ValueBridge</span> is the company behind the products building the future of money, from cross-border rails to payments, stablecoins, and AI.
 							</p>
 						</FadeIn>
 						</div>
