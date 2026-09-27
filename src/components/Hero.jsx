@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import kucoin from '../assets/KUCOIN.svg';
 import TTFCX from '../assets/TTFCX.svg';
@@ -20,9 +21,21 @@ const Hero = ({ title, subTitle, subTitle2, buttonTxt, heroImg, minTitle }) => {
 			`}
 		>
 			<div className='pointer-events-none absolute inset-0' aria-hidden='true'>
-				<div className='absolute -left-16 top-16 h-64 w-36 rounded-[2.5rem] bg-[#16348f]/70' />
-				<div className='absolute right-[6%] top-8 h-80 w-72 rounded-[3rem] bg-[#1a3d9e]/80' />
-				<div className='absolute left-[22%] -bottom-10 h-24 w-72 rounded-[2rem] bg-[#102a78]' />
+				<motion.div
+					className='absolute -left-16 top-16 h-64 w-36 rounded-[2.5rem] bg-[#16348f]/70'
+					animate={{ x: [0, 18, 0], y: [0, 22, 0] }}
+					transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
+				/>
+				<motion.div
+					className='absolute right-[6%] top-8 h-80 w-72 rounded-[3rem] bg-[#1a3d9e]/80'
+					animate={{ x: [0, 14, 0], y: [0, -20, 0] }}
+					transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+				/>
+				<motion.div
+					className='absolute left-[22%] -bottom-10 h-24 w-72 rounded-[2rem] bg-[#102a78]'
+					animate={{ y: [0, -14, 0] }}
+					transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+				/>
 			</div>
 			<div className='relative z-10 container mx-auto px-7'>
 				<div

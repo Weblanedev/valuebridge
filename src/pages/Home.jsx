@@ -31,7 +31,7 @@ const brandCards = [
 		title: 'Crossborder',
 		href: 'https://goldstack.co/',
 		icon: '/crossboder.png',
-		iconClass: 'pointer-events-none absolute right-4 top-4 h-11 w-11 opacity-90 [filter:brightness(0)_invert(1)]',
+		iconClass: 'h-8 w-8 opacity-90 [filter:brightness(0)_invert(1)] sm:h-11 sm:w-11',
 		copy: 'Payments, FX, and treasury for global businesses.',
 		float: 3.4,
 	},
@@ -39,7 +39,7 @@ const brandCards = [
 		title: 'Payments',
 		href: 'https://www.korahq.com/',
 		icon: '/paument.png',
-		iconClass: 'pointer-events-none absolute right-4 top-4 h-11 w-11 opacity-90 [filter:brightness(0)_invert(1)]',
+		iconClass: 'h-8 w-8 opacity-90 [filter:brightness(0)_invert(1)] sm:h-11 sm:w-11',
 		copy: 'Pan-African checkout, payouts, and settlements.',
 		float: 3.9,
 	},
@@ -47,7 +47,7 @@ const brandCards = [
 		title: 'Stablecoin',
 		href: 'https://www.trytreasura.com/',
 		icon: usdtImg,
-		iconClass: 'pointer-events-none absolute right-4 top-4 h-11 w-11',
+		iconClass: 'h-8 w-8 sm:h-11 sm:w-11',
 		copy: 'Tools to build multi-currency financial products.',
 		float: 3.2,
 	},
@@ -55,7 +55,7 @@ const brandCards = [
 		title: 'AI',
 		href: 'https://www.korahq.com/kovo',
 		icon: '/ai.png',
-		iconClass: 'pointer-events-none absolute right-3 top-3 h-12 w-12 opacity-90 [filter:brightness(0)_invert(1)]',
+		iconClass: 'h-9 w-9 opacity-90 [filter:brightness(0)_invert(1)] sm:h-12 sm:w-12',
 		copy: 'Payments inside chat. Join the waitlist.',
 		float: 2.8,
 	},
@@ -88,9 +88,9 @@ function TypedHeadline() {
 
 	return (
 		<h1
-			className='mx-auto pt-8 pb-8 text-[72px] font-semibold leading-[0.95] tracking-[-0.05em] sm:text-[104px] lg:text-[148px]'
+			className='mx-auto w-full max-w-full pt-1 pb-1 text-[52px] font-semibold leading-[0.92] tracking-[-0.04em] md:pt-4 md:pb-4 md:text-[104px] md:tracking-[-0.05em] lg:text-[148px]'
 		>
-			<span className='block whitespace-nowrap'>
+			<span className='block whitespace-normal md:whitespace-nowrap'>
 				{shown.slice(0, MONEY_START)}
 				<span className='text-[#7eb6ff]'>{shown.slice(MONEY_START)}</span>
 				{!done && (
@@ -112,36 +112,39 @@ export default function Home() {
 			<section
 				className={`
 			relative overflow-hidden
-			flex flex-col justify-center
+			flex flex-col
 			min-h-[calc(100svh-5.5rem)]
 			bg-[#0c2474]
 			text-white
-			py-16
+			py-4
+			md:py-8
+			lg:pt-32
+			lg:pb-10
 	`}
 			>
 				<div className='pointer-events-none absolute inset-0' aria-hidden='true'>
 					<motion.div
-						className='absolute -left-16 top-24 h-72 w-40 rounded-[2.5rem] bg-[#16348f]/70'
+						className='absolute -left-8 top-16 h-32 w-16 rounded-[1.5rem] bg-[#16348f]/70 md:-left-16 md:top-24 md:h-72 md:w-40 md:rounded-[2.5rem]'
 						animate={{ x: [0, 18, 0], y: [0, 22, 0] }}
 						transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
 					/>
 					<motion.div
-						className='absolute left-[18%] top-10 h-[420px] w-[340px] rounded-[2.75rem] bg-[#14307f]'
+						className='absolute left-[10%] top-14 h-44 w-36 rounded-[1.75rem] bg-[#14307f] md:left-[18%] md:top-10 md:h-[420px] md:w-[340px] md:rounded-[2.75rem]'
 						animate={{ x: [0, -16, 0], y: [0, 18, 0] }}
 						transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
 					/>
 					<motion.div
-						className='absolute right-[8%] top-6 h-[460px] w-[380px] rounded-[3rem] bg-[#1a3d9e]/80'
+						className='absolute -right-6 top-8 h-40 w-32 rounded-[1.75rem] bg-[#1a3d9e]/80 md:right-[8%] md:top-6 md:h-[460px] md:w-[380px] md:rounded-[3rem]'
 						animate={{ x: [0, 14, 0], y: [0, -20, 0] }}
 						transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
 					/>
 					<motion.div
-						className='absolute -right-10 bottom-0 h-40 w-[55%] rounded-t-[2.5rem] bg-[#102a78]'
+						className='absolute -right-6 bottom-0 h-16 w-28 rounded-t-[1.25rem] bg-[#102a78] md:-right-10 md:h-40 md:w-[55%] md:rounded-t-[2.5rem]'
 						animate={{ x: [0, -12, 0] }}
 						transition={{ duration: 17, repeat: Infinity, ease: 'easeInOut' }}
 					/>
 					<motion.div
-						className='absolute left-[8%] -bottom-8 h-28 w-64 rounded-[2rem] bg-[#1c429e]/60'
+						className='absolute left-[6%] -bottom-4 h-14 w-28 rounded-[1.25rem] bg-[#1c429e]/60 md:left-[8%] md:-bottom-8 md:h-28 md:w-64 md:rounded-[2rem]'
 						animate={{ y: [0, -14, 0] }}
 						transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
 					/>
@@ -151,7 +154,10 @@ export default function Home() {
 				relative z-10
 				container
 				mx-auto
-				lg:items-center
+				flex
+				w-full
+				flex-1
+				flex-col
 				px-7
 				lg:ps-7
 				'
@@ -164,23 +170,22 @@ export default function Home() {
 						className='
 						flex
 						flex-col
-						justify-between
-						gap-12
-						lg:gap-16
-items-center
+						items-center
+						justify-start
+						gap-24
+						md:gap-20
+						lg:gap-28
 						'
 					// w-full
 					>
 						<div
 							className='
-							py-[14px]
-							md:pb-[27px] md:pt-[0px]
 							text-center
 							'
 						>
 							<TypedHeadline />
 						</div>
-						<div className='grid w-full max-w-5xl grid-cols-1 gap-5 pb-16 sm:grid-cols-2 lg:grid-cols-4'>
+						<div className='grid w-full max-w-5xl grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-5'>
 							{brandCards.map((card, index) => (
 								<motion.a
 									key={card.title}
@@ -191,17 +196,17 @@ items-center
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ duration: 0.7, delay: 0.15 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
 									whileHover={{ y: -6, borderColor: '#7eb6ff', backgroundColor: 'rgba(255,255,255,0.15)' }}
-									className='relative overflow-hidden rounded-[28px] border border-white/20 bg-white/10 p-6 text-left outline-none backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-[#7eb6ff]'
+									className='relative overflow-hidden rounded-[22px] border border-white/20 bg-white/10 p-4 text-left outline-none backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-[#7eb6ff] sm:rounded-[28px] sm:p-6'
 								>
 									<motion.img
 										src={card.icon}
 										alt=''
 										animate={{ y: [0, -5, 0] }}
 										transition={{ duration: card.float, repeat: Infinity, ease: 'easeInOut' }}
-										className={card.iconClass}
+										className={`pointer-events-none mb-2 ml-auto block sm:absolute sm:right-4 sm:top-4 sm:mb-0 sm:ml-0 ${card.iconClass}`}
 									/>
-									<span className='relative block pr-14 text-[22px] font-semibold text-white'>{card.title}</span>
-									<span className='relative mt-3 block text-[16px] font-normal leading-6 text-white/70'>
+									<span className='relative block text-[16px] font-semibold leading-tight text-white sm:pr-14 sm:text-[22px]'>{card.title}</span>
+									<span className='relative mt-2 block text-[13px] font-normal leading-5 text-white/70 sm:mt-3 sm:text-[16px] sm:leading-6'>
 										{card.copy}
 									</span>
 								</motion.a>
@@ -220,11 +225,11 @@ items-center
 				// md:max-w-6xl
 				className='container
 
-			mx-auto px-7 pt-8 pb-20'
+			mx-auto px-7 pt-4 pb-8 md:pt-8 md:pb-20'
 			>
-				<FadeIn className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
-					<div className='grid grid-cols-1 gap-4 rounded-3xl bg-[#f4f6fb] p-5'>
-						<div className='h-[118px]'>
+				<FadeIn className='grid grid-cols-2 gap-3 md:gap-5 lg:grid-cols-4'>
+					<div className='grid grid-cols-1 gap-2 rounded-2xl bg-[#f4f6fb] p-3 md:gap-4 md:rounded-3xl md:p-5'>
+						<div className='h-16 md:h-[118px]'>
 							<img
 								src={settlementImg}
 								alt='Settlement'
@@ -242,8 +247,8 @@ items-center
 							</p>
 						</div>
 					</div>
-					<div className='grid grid-cols-1 gap-4 rounded-3xl bg-[#f4f6fb] p-5'>
-						<div className='h-[118px]'>
+					<div className='grid grid-cols-1 gap-2 rounded-2xl bg-[#f4f6fb] p-3 md:gap-4 md:rounded-3xl md:p-5'>
+						<div className='h-16 md:h-[118px]'>
 							<img
 								src={rateImg}
 								alt='Rates'
@@ -264,8 +269,8 @@ items-center
 							</p>
 						</div>
 					</div>
-					<div className='grid grid-cols-1 gap-4 rounded-3xl bg-[#f4f6fb] p-5'>
-						<div className='h-[118px]'>
+					<div className='grid grid-cols-1 gap-2 rounded-2xl bg-[#f4f6fb] p-3 md:gap-4 md:rounded-3xl md:p-5'>
+						<div className='h-16 md:h-[118px]'>
 							<img
 								src={currencyImg}
 								alt='Multi-currency support'
@@ -273,7 +278,7 @@ items-center
 							// h-[208px]
 							/>
 						</div>
-						<div className='text-center mt-[22px]'>
+						<div className='text-center'>
 							<h3 className='font-[500] text-[20px] leading-[35px] text-[#101828] pb-[3px]'>
 								Stablecoin
 							</h3>
@@ -283,8 +288,8 @@ items-center
 							</p>
 						</div>
 					</div>
-					<div className='grid grid-cols-1 gap-4 rounded-3xl bg-[#f4f6fb] p-5'>
-						<div className='h-[118px]'>
+					<div className='grid grid-cols-1 gap-2 rounded-2xl bg-[#f4f6fb] p-3 md:gap-4 md:rounded-3xl md:p-5'>
+						<div className='h-16 md:h-[118px]'>
 							<img
 								src={psImg}
 								alt='support'
@@ -325,9 +330,9 @@ items-center
                     '
 					>
 						<div className='w-full'>
-							<img src={worldImg} />
+							<img src={worldImg} className='mx-auto h-36 w-auto object-contain md:h-auto md:w-full' />
 						</div>
-						<div className='xl:ml-[130px] lg:w-[442px] py-[78px]'>
+						<div className='xl:ml-[130px] lg:w-[442px] py-4 md:py-[78px]'>
 							<h4 className='font-[400] leading-[32px] text-[16px] uppercase text-[#00611B]'>
 							How It Works
 							</h4>
@@ -371,7 +376,8 @@ items-center
 			</section>
 			<section
 				className='
-				py-[60px]
+				py-6
+				md:py-[60px]
 				lg:px-[49px]
 			'
 			>
@@ -396,7 +402,7 @@ items-center
 						>
 							<h4 className='font-[400] leading-[32px] text-[16px] uppercase text-[#4C00EE]'>
 								Payments							</h4>
-							<h2 className='mt-[8px] mb-[24px] font-[600] text-[27px] leading-[36px] text-[#101828]'>
+							<h2 className='mt-2 mb-3 font-[600] text-[27px] leading-[36px] text-[#101828] md:mb-[24px]'>
 							Payments, one of the four products building the future of money.
 							</h2>
 
@@ -439,7 +445,7 @@ items-center
 						'
 						// lg:py-5
 						>
-							<img src={heroImg} />
+							<img src={heroImg} className='mx-auto h-28 w-auto object-contain md:h-auto md:w-full' />
 						</div>
 					</FadeIn>
 				</div>
@@ -516,7 +522,8 @@ items-center
 			</section>
 			<section
 				className='
-				py-[71px]
+				py-8
+			md:py-[71px]
 			lg:px-[61px]
 			bg-[#F9FAFB]
 			'
@@ -530,11 +537,11 @@ items-center
 			'
 				>
 					<FadeIn className='lg:w-[665px]'>
-						<h2 className='font-[600] text-[34px] lg:text-[45px] lg:leading-[50px]'>
+						<h2 className='font-[600] text-[28px] leading-tight md:text-[34px] lg:text-[45px] lg:leading-[50px]'>
 							The tools behind the future of money
 						</h2>
 
-						<p className='font-[400px] text-[22px] text-[#101828] leading-[36px] py-[16px] `pb-[24px]'>
+						<p className='py-2 text-[16px] font-[400] leading-6 text-[#101828] md:py-[16px] md:text-[22px] md:leading-[36px] `pb-[24px]'>
 							ValueBridge brings payouts, settlements, wallets, and cash together, in local currency and stablecoins, so businesses can reach new markets.
 						</p>
 					</FadeIn>
