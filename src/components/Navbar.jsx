@@ -29,10 +29,26 @@ const Navbar = () => {
 				{({ open, close }) => (
 					<>
 						<div className='pointer-events-none absolute inset-0 overflow-hidden' aria-hidden='true'>
-							<div className='absolute -left-3 top-1 h-8 w-7 rounded-xl bg-[#16348f]/80 md:-left-6 md:h-16 md:w-14 md:rounded-[1.25rem]' />
-							<div className='absolute left-[16%] -top-3 h-10 w-12 rounded-xl bg-[#14307f] md:left-[22%] md:-top-6 md:h-20 md:w-28 md:rounded-[1.5rem]' />
-							<div className='absolute right-[6%] -top-4 h-10 w-12 rounded-xl bg-[#1a3d9e]/80 md:right-[18%] md:-top-8 md:h-24 md:w-32 md:rounded-[1.5rem]' />
-							<div className='absolute -right-2 bottom-0 h-7 w-10 rounded-t-lg bg-[#102a78] md:-right-4 md:h-14 md:w-24 md:rounded-t-[1.25rem]' />
+							<motion.div
+								className='absolute -left-3 top-1 h-8 w-7 rounded-xl bg-[#16348f]/80 md:-left-6 md:h-16 md:w-14 md:rounded-[1.25rem]'
+								animate={{ x: [0, 10, 0], y: [0, 6, 0] }}
+								transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+							/>
+							<motion.div
+								className='absolute left-[16%] -top-3 h-10 w-12 rounded-xl bg-[#14307f] md:left-[22%] md:-top-6 md:h-20 md:w-28 md:rounded-[1.5rem]'
+								animate={{ x: [0, -12, 0], y: [0, 8, 0] }}
+								transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+							/>
+							<motion.div
+								className='absolute right-[6%] -top-4 h-10 w-12 rounded-xl bg-[#1a3d9e]/80 md:right-[18%] md:-top-8 md:h-24 md:w-32 md:rounded-[1.5rem]'
+								animate={{ x: [0, 10, 0], y: [0, -6, 0] }}
+								transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
+							/>
+							<motion.div
+								className='absolute -right-2 bottom-0 h-7 w-10 rounded-t-lg bg-[#102a78] md:-right-4 md:h-14 md:w-24 md:rounded-t-[1.25rem]'
+								animate={{ x: [0, -10, 0] }}
+								transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+							/>
 						</div>
 						<div
 							className='relative z-10 container mx-auto  py-2 px-2 sm:px-6 lg:px-7

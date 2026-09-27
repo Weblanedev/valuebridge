@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Button } from './CustomButtons';
 import { FadeIn } from './Motion';
@@ -21,11 +22,31 @@ const Footer = () => {
 			<div className='container mx-auto px-7'>
 				<FadeIn className='relative z-10 overflow-hidden rounded-[28px] bg-[#0c2474] px-8 py-10 text-white md:px-14 md:py-12'>
 					<div className='pointer-events-none absolute inset-0' aria-hidden='true'>
-						<div className='absolute -left-10 top-6 h-28 w-24 rounded-[1.75rem] bg-[#16348f]/80' />
-						<div className='absolute left-[8%] -top-8 h-40 w-36 rounded-[2rem] bg-[#14307f]' />
-						<div className='absolute right-[6%] -top-6 h-44 w-40 rounded-[2rem] bg-[#1a3d9e]/80' />
-						<div className='absolute -right-8 bottom-0 h-24 w-40 rounded-t-[1.75rem] bg-[#102a78]' />
-						<div className='absolute left-[18%] -bottom-6 h-16 w-36 rounded-[1.5rem] bg-[#1c429e]/70' />
+						<motion.div
+							className='absolute -left-10 top-6 h-28 w-24 rounded-[1.75rem] bg-[#16348f]/80'
+							animate={{ x: [0, 16, 0], y: [0, 12, 0] }}
+							transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
+						/>
+						<motion.div
+							className='absolute left-[8%] -top-8 h-40 w-36 rounded-[2rem] bg-[#14307f]'
+							animate={{ x: [0, -14, 0], y: [0, 16, 0] }}
+							transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+						/>
+						<motion.div
+							className='absolute right-[6%] -top-6 h-44 w-40 rounded-[2rem] bg-[#1a3d9e]/80'
+							animate={{ x: [0, 12, 0], y: [0, -14, 0] }}
+							transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+						/>
+						<motion.div
+							className='absolute -right-8 bottom-0 h-24 w-40 rounded-t-[1.75rem] bg-[#102a78]'
+							animate={{ x: [0, -12, 0] }}
+							transition={{ duration: 17, repeat: Infinity, ease: 'easeInOut' }}
+						/>
+						<motion.div
+							className='absolute left-[18%] -bottom-6 h-16 w-36 rounded-[1.5rem] bg-[#1c429e]/70'
+							animate={{ y: [0, -12, 0] }}
+							transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+						/>
 					</div>
 					<div className='relative z-10 mx-auto max-w-4xl py-6 text-center md:py-10'>
 						<h3 className='text-[32px] font-medium leading-[1.15] tracking-[-0.03em] md:text-[48px]'>

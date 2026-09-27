@@ -12,10 +12,26 @@ const ContactUs = () => {
 				className='relative flex min-h-[calc(100svh-5.5rem)] flex-col justify-center overflow-hidden bg-[#0c2474] py-8 text-white'
 			>
 				<div className='pointer-events-none absolute inset-0' aria-hidden='true'>
-					<div className='absolute -left-8 top-12 h-32 w-16 rounded-[1.5rem] bg-[#16348f]/70 md:-left-16 md:top-16 md:h-64 md:w-36 md:rounded-[2.5rem]' />
-					<div className='absolute left-[8%] top-14 h-44 w-36 rounded-[1.75rem] bg-[#14307f] md:top-10 md:h-[340px] md:w-[260px] md:rounded-[2.75rem]' />
-					<div className='absolute -right-6 top-8 h-40 w-32 rounded-[1.75rem] bg-[#1a3d9e]/80 md:right-[4%] md:h-72 md:w-64 md:rounded-[3rem]' />
-					<div className='absolute left-[12%] -bottom-4 h-14 w-28 rounded-[1.25rem] bg-[#102a78] md:left-[18%] md:-bottom-8 md:h-24 md:w-72 md:rounded-[2rem]' />
+					<motion.div
+						className='absolute -left-8 top-12 h-32 w-16 rounded-[1.5rem] bg-[#16348f]/70 md:-left-16 md:top-16 md:h-64 md:w-36 md:rounded-[2.5rem]'
+						animate={{ x: [0, 18, 0], y: [0, 22, 0] }}
+						transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
+					/>
+					<motion.div
+						className='absolute left-[8%] top-14 h-44 w-36 rounded-[1.75rem] bg-[#14307f] md:top-10 md:h-[340px] md:w-[260px] md:rounded-[2.75rem]'
+						animate={{ x: [0, -16, 0], y: [0, 18, 0] }}
+						transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+					/>
+					<motion.div
+						className='absolute -right-6 top-8 h-40 w-32 rounded-[1.75rem] bg-[#1a3d9e]/80 md:right-[4%] md:h-72 md:w-64 md:rounded-[3rem]'
+						animate={{ x: [0, 14, 0], y: [0, -20, 0] }}
+						transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+					/>
+					<motion.div
+						className='absolute left-[12%] -bottom-4 h-14 w-28 rounded-[1.25rem] bg-[#102a78] md:left-[18%] md:-bottom-8 md:h-24 md:w-72 md:rounded-[2rem]'
+						animate={{ y: [0, -14, 0] }}
+						transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+					/>
 				</div>
 				<div
 					className='relative z-10 container mx-auto
