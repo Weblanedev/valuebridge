@@ -2,8 +2,6 @@ import { Disclosure } from '@headlessui/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/Logo.svg';
-import { Button } from '../components/CustomButtons';
-import { DropdownNavLinkMobile } from './DropdownNavLink';
 // {
 // 	name: 'Products',
 // 	to: '/products',
@@ -15,8 +13,6 @@ import { DropdownNavLinkMobile } from './DropdownNavLink';
 // 	current: true
 // }
 // { name: 'Use cases', to: '/use-cases', current: true },
-const navigation = [{ name: 'Company', to: '/company', current: true }];
-
 const Navbar = () => {
 	return (
 		<>
@@ -33,10 +29,10 @@ const Navbar = () => {
 				{({ open, close }) => (
 					<>
 						<div className='pointer-events-none absolute inset-0 overflow-hidden' aria-hidden='true'>
-							<div className='absolute -left-6 top-1 h-16 w-14 rounded-[1.25rem] bg-[#16348f]/80' />
-							<div className='absolute left-[22%] -top-6 h-20 w-28 rounded-[1.5rem] bg-[#14307f]' />
-							<div className='absolute right-[18%] -top-8 h-24 w-32 rounded-[1.5rem] bg-[#1a3d9e]/80' />
-							<div className='absolute -right-4 bottom-0 h-14 w-24 rounded-t-[1.25rem] bg-[#102a78]' />
+							<div className='absolute -left-3 top-1 h-8 w-7 rounded-xl bg-[#16348f]/80 md:-left-6 md:h-16 md:w-14 md:rounded-[1.25rem]' />
+							<div className='absolute left-[16%] -top-3 h-10 w-12 rounded-xl bg-[#14307f] md:left-[22%] md:-top-6 md:h-20 md:w-28 md:rounded-[1.5rem]' />
+							<div className='absolute right-[6%] -top-4 h-10 w-12 rounded-xl bg-[#1a3d9e]/80 md:right-[18%] md:-top-8 md:h-24 md:w-32 md:rounded-[1.5rem]' />
+							<div className='absolute -right-2 bottom-0 h-7 w-10 rounded-t-lg bg-[#102a78] md:-right-4 md:h-14 md:w-24 md:rounded-t-[1.25rem]' />
 						</div>
 						<div
 							className='relative z-10 container mx-auto  py-2 px-2 sm:px-6 lg:px-7
@@ -56,12 +52,12 @@ const Navbar = () => {
 									mr-auto lg:mr-0
 									'
 									>
-										<NavLink to='/' onClick={() => close()} className="font-semibold not-italic text-[31px] tracking-[-0.04em] -ml-5 lg:-ml-11 hover:text-white">
+										<NavLink to='/' onClick={() => close()} className="font-semibold not-italic text-[26px] tracking-[-0.04em] sm:text-[31px] lg:-ml-11 hover:text-white">
 											{/* <img src={logo} alt='Primeswitch logo' /> */}
 											ValueBridge.
 										</NavLink>
 									</div>
-									<div className='hidden sm:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8 text-[20px] font-medium text-white'>
+									<div className='hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center gap-8 text-[20px] font-medium text-white'>
 										<a href='https://goldstack.co/' target='_blank' rel='noreferrer' className='transition-colors hover:text-[#7eb6ff]'>
 											Crossborder
 										</a>
@@ -134,30 +130,18 @@ const Navbar = () => {
 							 text-center
 							 '
 								>
-									<DropdownNavLinkMobile close={close} />
-
-									{navigation.map((navigationItem) => (
-										<Disclosure.Button
-											key={navigationItem.name}
-											as={NavLink}
-											to={navigationItem.to}
-										>
-											{navigationItem.name}
-										</Disclosure.Button>
-									))}
-								</div>
-								<div className='pt-2'>
-									<div
-										className='flex flex-col
-										items-center
-										mx-auto
-										space-y-2
-							 text-center'
-									>
-										<NavLink to='contact' onClick={() => close()}>
-											<Button btnText='Contact Sales' icon={false} />
-										</NavLink>
-									</div>
+									<a href='https://goldstack.co/' target='_blank' rel='noreferrer' className='py-2 text-[20px]' onClick={() => close()}>
+										Crossborder
+									</a>
+									<a href='https://www.korahq.com/' target='_blank' rel='noreferrer' className='py-2 text-[20px]' onClick={() => close()}>
+										Payments
+									</a>
+									<a href='https://www.trytreasura.com/' target='_blank' rel='noreferrer' className='py-2 text-[20px]' onClick={() => close()}>
+										Stablecoin
+									</a>
+									<a href='https://www.korahq.com/kovo' target='_blank' rel='noreferrer' className='py-2 text-[20px]' onClick={() => close()}>
+										AI
+									</a>
 								</div>
 							</motion.div>
 							)}

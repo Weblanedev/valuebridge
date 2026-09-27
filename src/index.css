@@ -13,6 +13,7 @@
 		font-size: 18px;
 		background: #f7f7f5;
 		color: #101828;
+		overflow-x: clip;
 	}
 
 	h1,
