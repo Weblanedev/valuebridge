@@ -13,12 +13,12 @@ const Article = (props) => {
 					<div>
 						<h4
 							id='payout'
-							className='font-[600] text-[20px] leading-[35px]  text-[#101828] mt-[16px]'
+							className='font-[600] text-[22px] leading-[35px]  text-[#101828] mt-[16px]'
 						>
 							Payout Types
 						</h4>
 						<p
-							className='font-[400px] text-[20px] leading-[35px]
+							className='font-[400px] text-[22px] leading-[35px]
 									 text-[#101828]
 									'
 						>
@@ -37,7 +37,7 @@ const Article = (props) => {
 									key={index}
 								>
 									<img src={item?.img} alt={item?.name} />
-									<p className='font-[500px] text-[16px] text-black leading-[35px] pt-[16px] '>
+									<p className='font-[500px] text-[18px] text-black leading-[35px] pt-[16px] '>
 										{item?.name}
 									</p>
 								</div>
@@ -49,12 +49,12 @@ const Article = (props) => {
 			)}
 			<h4
 				id='currency'
-				className='font-[600] text-[24px] leading-[35px]  text-[#101828] mt-0'
+				className='font-[600] text-[27px] leading-[35px]  text-[#101828] mt-0'
 			>
 				Supported Currencies
 			</h4>
 			<p
-				className='font-[400px] text-[20px] leading-[35px]
+				className='font-[400px] text-[22px] leading-[35px]
 									 text-[#101828]
 									'
 			>
@@ -74,7 +74,7 @@ const Article = (props) => {
 					>
 						<img src={item?.img} alt='euro icon' />
 
-						<p className='font-[500px] text-[16px] text-black leading-[35px] pt-[16px] '>
+						<p className='font-[500px] text-[18px] text-black leading-[35px] pt-[16px] '>
 							{item?.name}
 						</p>
 					</div>
@@ -86,7 +86,7 @@ const Article = (props) => {
 						// px-[72px]
 					>
 						<img src={eurImg} alt='euro icon' />
-						<p className='font-[500px] text-[16px] text-black leading-[35px] pt-[16px]'>
+						<p className='font-[500px] text-[18px] text-black leading-[35px] pt-[16px]'>
 							Euro (EUR)
 						</p>
 					</div>
@@ -98,7 +98,7 @@ const Article = (props) => {
 					>
 						<img src={ukImg} alt='euro icon' />
 
-						<p className='font-[500px] text-[16px] text-black leading-[35px] pt-[16px]'>
+						<p className='font-[500px] text-[18px] text-black leading-[35px] pt-[16px]'>
 							Pound sterling (GBP)
 						</p>
 					</div>
@@ -110,7 +110,7 @@ const Article = (props) => {
 						// px-[72px]
 					>
 						<img src={canImg} alt='euro icon' />
-						<p className='font-[500px] text-[16px] text-black leading-[35px] pt-[16px]'>
+						<p className='font-[500px] text-[18px] text-black leading-[35px] pt-[16px]'>
 							Canadian dollar (CAD)
 						</p>
 					</div>
@@ -122,7 +122,7 @@ const Article = (props) => {
 						// px-[72px]
 					>
 						<img src={auImg} alt='euro icon' />
-						<p className='font-[500px] text-[16px] text-black leading-[35px] pt-[16px]'>
+						<p className='font-[500px] text-[18px] text-black leading-[35px] pt-[16px]'>
 							Australian dollar (AUD)
 						</p>
 					</div>
@@ -134,7 +134,7 @@ const Article = (props) => {
 						// px-[72px]
 					>
 						<img src={cnyImg} alt='euro icon' />
-						<p className='font-[500px] text-[16px] text-black leading-[35px] pt-[16px] '>
+						<p className='font-[500px] text-[18px] text-black leading-[35px] pt-[16px] '>
 							Chinese yen (CNY)
 						</p>
 					</div> */}

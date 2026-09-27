@@ -49,8 +49,8 @@ const CryptoSwaps = () => {
 		<>
 			<Hero
 				minTitle='CRYPTO SWAPS'
-				title='Provide Crypto swaps as a service'
-				subTitle='Unlock the potential of digital asset swapping and experience hassle-free crypto exchanges like never before.'
+				title='Swap stablecoins as a service'
+				subTitle='Exchange stablecoins and digital assets inside the ValueBridge future of money.'
 				buttonTxt='Learn More'
 				heroImg={heroImg}
 			/>
@@ -67,15 +67,12 @@ const CryptoSwaps = () => {
 			'
 				>
 					<div className='lg:w-[665px]'>
-						<h2 className='font-[600] text-[30px] lg:text-[40px] lg:leading-[50px]'>
+						<h2 className='font-[600] text-[34px] lg:text-[45px] lg:leading-[50px]'>
 							Benefits
 						</h2>
 
-						<p className='font-[400px] text-[20px] text-[#101828] leading-[36px] py-[16px] pb-[24px]'>
-							Whether you're looking to diversify your portfolio, take advantage
-							of market opportunities, or simply exchange your digital assets
-							efficiently, our platform provides the tools and resources you
-							need.
+						<p className='font-[400px] text-[22px] text-[#101828] leading-[36px] py-[16px] pb-[24px]'>
+							Swap stablecoins and other digital assets when customers need to move between currencies. ValueBridge keeps swaps next to payments, rails, and AI.
 						</p>
 					</div>
 				</div>

@@ -59,7 +59,7 @@ const TableofContent = (props) => {
 						<a
 							href={`#${id}`}
 							className={
-								`flex text-[20px] leading-[35px]  text-[#101828] ${
+								`flex text-[22px] leading-[35px]  text-[#101828] ${
 									headings?.length < 2 ? '' : 'mt-[16px]'
 								} gap-8 items-center link-hover transition-all  text-lg ` +
 								activeClass +

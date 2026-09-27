@@ -5,19 +5,26 @@ import binanceLogo from '../assets/binance.svg';
 import bundleLogo from '../assets/bundle.svg';
 import scalex from '../assets/scalex-logo.svg';
 import { Button } from './CustomButtons';
+import { FadeIn } from './Motion';
 const logo = [binanceLogo, kucoin, bundleLogo, TTFCX, scalex];
 
 const Hero = ({ title, subTitle, subTitle2, buttonTxt, heroImg, minTitle }) => {
 	return (
 		<section
 			className={`
-			bg-blue-950
+			relative overflow-hidden
+			bg-[#0c2474]
 			${subTitle2 ? 'pt-[60px] lg:pt-[120px]' : 'lg:pt-[60px]'}
 			${logo ? 'pb-[34px] lg:pb-[68px]' : 'lg:pb-[150px]'}
 			text-white
 			`}
 		>
-			<div className='container mx-auto px-7'>
+			<div className='pointer-events-none absolute inset-0' aria-hidden='true'>
+				<div className='absolute -left-16 top-16 h-64 w-36 rounded-[2.5rem] bg-[#16348f]/70' />
+				<div className='absolute right-[6%] top-8 h-80 w-72 rounded-[3rem] bg-[#1a3d9e]/80' />
+				<div className='absolute left-[22%] -bottom-10 h-24 w-72 rounded-[2rem] bg-[#102a78]' />
+			</div>
+			<div className='relative z-10 container mx-auto px-7'>
 				<div
 					className='grid
 					lg:grid-cols-2
@@ -26,11 +33,8 @@ const Hero = ({ title, subTitle, subTitle2, buttonTxt, heroImg, minTitle }) => {
 					items-center
 					'
 				>
-					<div
-						className={`
-						py-[12px]
-					lg:py-[24px]
-					`}
+					<FadeIn
+						className='py-3 lg:py-6'
 						// ${location?.split('/')[2] === 'all-apis' && 'xl:w-[627px]'}
 						// ${(location?.split('/')[2] === 'settlements' || 'payouts') && 'xl:w-[651px]'}
 						// lg:w-[651px]
@@ -41,13 +45,13 @@ const Hero = ({ title, subTitle, subTitle2, buttonTxt, heroImg, minTitle }) => {
 						// px-6z
 					>
 						{minTitle && (
-							<p className='font-[500] text-[16px] leading-[35px]'>
+							<p className='font-[500] text-[18px] leading-[35px]'>
 								{minTitle}
 							</p>
 						)}
 						<h1
-							className='text-[32px]
-					lg:text-[64px] font-[700] lg:leading-[70px]
+							className='text-[36px]
+					lg:text-[72px] font-[700] lg:leading-[70px]
 					 '
 						>
 							{title}
@@ -58,7 +62,7 @@ const Hero = ({ title, subTitle, subTitle2, buttonTxt, heroImg, minTitle }) => {
 							className='pt-[16px]
 							font-[400]
 							pb-[25px]
-							text-[18px] lg:text-[20px] leading-[35px]'
+							text-[20px] lg:text-[22px] leading-[35px]'
 						>
 							{subTitle}
 						</p>
@@ -70,7 +74,7 @@ const Hero = ({ title, subTitle, subTitle2, buttonTxt, heroImg, minTitle }) => {
 						pb-[25px]
 						lg:pb-[38px]
 						font-[400]
-						text-[18px] lg:text-[20px] leading-[35px]'
+						text-[20px] lg:text-[22px] leading-[35px]'
 							>
 								{subTitle2}
 							</p>
@@ -83,16 +87,13 @@ const Hero = ({ title, subTitle, subTitle2, buttonTxt, heroImg, minTitle }) => {
 								<Button type='primary' btnText={buttonTxt} icon={true} />
 							</Link>
 						</div>
-					</div>
-					<div
-						className={`order-first lg:order-last
-						pr-0
-						justify-end
-						lg:flex
-						`}
+					</FadeIn>
+					<FadeIn
+						delay={0.15}
+						className='order-first lg:order-last pr-0 justify-end lg:flex'
 					>
 						<img src={heroImg} alt='hero-img' className='md:w-full' />
-					</div>
+					</FadeIn>
 				</div>
 				{/* {logo && (
 					<div

@@ -1,10 +1,10 @@
 body {
-	font-family: "Playfair Display", serif;
+	font-family: 'Bricolage Grotesque', sans-serif;
 }
 
 .is-sticky {
 	position: fixed;
-	top: 10px;
-	z-index: 999;
+	top: 120px;
+	z-index: 30;
 	animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
 }

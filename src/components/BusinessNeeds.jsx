@@ -20,7 +20,7 @@ lg:px-[61px]
             '
 				>
 					<div className='h-fit'>
-						<h2 className=' mb-[46px] font-[500] text-[16px] lg:text-[32px] leading-[35px] text-[#101828]'>
+						<h2 className=' mb-[46px] font-[500] text-[18px] lg:text-[36px] leading-[35px] text-[#101828]'>
 							Everything your business needs
 						</h2>
 
@@ -41,10 +41,10 @@ lg:px-[61px]
 									<img src={marketImg} alt='' className='h-full' />
 								</div>
 								<div className='h-[72px] text-center'>
-									<h3 className='pb-[6px] text-[19px] leading-[21px] font-[500] text-[#101828]'>
+									<h3 className='pb-[6px] text-[21px] leading-[21px] font-[500] text-[#101828]'>
 										Expand into new markets
 									</h3>
-									<p className='font-[400] text-[16px] leading-[24px] text-[#344363]'>
+									<p className='font-[400] text-[18px] leading-[24px] text-[#344363]'>
 										Easily grow into new markets while keeping your business
 										compliant.
 									</p>
@@ -65,10 +65,10 @@ lg:px-[61px]
 								text-center'
 									// mt-[23px]
 								>
-									<h3 className='pb-[6px] text-[19px] leading-[21px] font-[500] text-[#101828]'>
+									<h3 className='pb-[6px] text-[21px] leading-[21px] font-[500] text-[#101828]'>
 										Move assets at scale instantly
 									</h3>
-									<p className='font-[400] text-[16px] leading-[24px] text-[#344363]'>
+									<p className='font-[400] text-[18px] leading-[24px] text-[#344363]'>
 										Transfer any asset in real-time, 24x7, within our network
 									</p>
 								</div>
@@ -85,10 +85,10 @@ lg:px-[61px]
 									<img src={fastImg} alt='' className='h-full' />
 								</div>
 								<div className='h-[72px] text-center'>
-									<h3 className='pb-[6px] text-[19px] leading-[21px] font-[500] text-[#101828]'>
+									<h3 className='pb-[6px] text-[21px] leading-[21px] font-[500] text-[#101828]'>
 										Fast Settlements
 									</h3>
-									<p className='font-[400] text-[16px] leading-[24px] text-[#344363]'>
+									<p className='font-[400] text-[18px] leading-[24px] text-[#344363]'>
 										Settle your global partners in their local currency
 									</p>
 								</div>
@@ -108,10 +108,10 @@ lg:px-[61px]
 									/>
 								</div>
 								<div className='h-[72px] text-center'>
-									<h3 className='pb-[6px] text-[19px] leading-[21px] font-[500] text-[#101828]'>
+									<h3 className='pb-[6px] text-[21px] leading-[21px] font-[500] text-[#101828]'>
 										API Documentation
 									</h3>
-									<p className='font-[400] text-[16px] leading-[24px] text-[#344363]'>
+									<p className='font-[400] text-[18px] leading-[24px] text-[#344363]'>
 										Dive into the details of our APIs and see how they can work
 										for your business.
 									</p>

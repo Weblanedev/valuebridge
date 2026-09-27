@@ -1,3 +1,4 @@
+import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -8,7 +9,7 @@ const DropdownNavLink = () => {
 			<NavLink
 				// type='button'
 				// inline-flex
-				className='hidden sm:block justify-center w-full
+				className='hidden sm:block justify-center w-full text-[20px] font-medium
 					menu-hover
 
 					'
@@ -21,54 +22,54 @@ const DropdownNavLink = () => {
 				Products
 			</NavLink>
 
-			{isOpen && (
-				<div
-					className='absolute z-50 mt-2
-					rounded-md shadow-lg
-					bg-white
-					w-[130px]
-					text-left'
-					// px-[20px]
-					// bg-red-600
+			<AnimatePresence>
+				{isOpen && (
+				<motion.div
+					className='absolute right-0 z-50 w-[280px] pt-3 text-left'
+					initial={{ opacity: 0, y: -12 }}
+					animate={{ opacity: 1, y: 0 }}
+					exit={{ opacity: 0, y: -8 }}
+					transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
 					onMouseLeave={() => setIsOpen(false)}
 				>
 					<div
-						className='py-1'
+						className='rounded-2xl bg-white p-2 shadow-[0_16px_40px_rgba(7,18,56,0.18)]'
 						role='menu'
 						aria-orientation='vertical'
 						aria-labelledby='options-menu'
 					>
-						{/* <NavLink
-							to='products/all-apis'
-							className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
-							role='menuitem'
-							onClick={() => setIsOpen(false)}
-						>
-							All APIs
-						</NavLink> */}
 						<NavLink
 							to='products/pay-ins'
-							className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+							className='block rounded-xl px-4 py-3 text-[#101828] hover:bg-[#f4f6fb] hover:text-[#0c2474]'
 							role='menuitem'
 							onClick={() => setIsOpen(false)}
 						>
-							Pay-ins
+							<span className='block text-[18px] font-semibold'>Pay-ins</span>
+							<span className='mt-1 block text-[15px] font-normal leading-5 text-[#667085]'>
+								Accept payments from customers
+							</span>
 						</NavLink>
 						<NavLink
 							to='products/settlements'
-							className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+							className='block rounded-xl px-4 py-3 text-[#101828] hover:bg-[#f4f6fb] hover:text-[#0c2474]'
 							role='menuitem'
 							onClick={() => setIsOpen(false)}
 						>
-							Settlements
+							<span className='block text-[18px] font-semibold'>Settlements</span>
+							<span className='mt-1 block text-[15px] font-normal leading-5 text-[#667085]'>
+								Settle partners in local currency
+							</span>
 						</NavLink>
 						<NavLink
 							to='products/payouts'
-							className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+							className='block rounded-xl px-4 py-3 text-[#101828] hover:bg-[#f4f6fb] hover:text-[#0c2474]'
 							role='menuitem'
 							onClick={() => setIsOpen(false)}
 						>
-							Payouts
+							<span className='block text-[18px] font-semibold'>Payouts</span>
+							<span className='mt-1 block text-[15px] font-normal leading-5 text-[#667085]'>
+								Send money to bank accounts
+							</span>
 						</NavLink>
 						{/* <NavLink
 							to='products/crypto-swaps'
@@ -87,8 +88,9 @@ const DropdownNavLink = () => {
 							Liquidity
 						</NavLink> */}
 					</div>
-				</div>
-			)}
+				</motion.div>
+				)}
+			</AnimatePresence>
 		</div>
 	);
 };

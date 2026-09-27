@@ -3,7 +3,8 @@
 import DescriptionComp from '../components/DescriptionComp';
 // import { Inter } from 'next/font/google';
 // const inter = Inter({ subsets: ['latin'] });
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import corporateImg from '../assets/corporate-treasury.svg';
 import heroImg from '../assets/hero-img.svg';
 import cash from '../assets/icons/cash.svg';
@@ -14,6 +15,7 @@ import settlement from '../assets/icons/settlements.svg';
 import swaps from '../assets/icons/swaps.svg';
 import treasury from '../assets/icons/treasury.svg';
 import wallets from '../assets/icons/wallet.svg';
+import usdtImg from '../assets/USDT.svg';
 
 import currencyImg from '../assets/trust.svg';
 import psImg from '../assets/layers.svg';
@@ -21,27 +23,132 @@ import rateImg from '../assets/rate.svg';
 import settlementImg from '../assets/settlement.svg';
 import vipImg from '../assets/vip.svg';
 import worldImg from '../assets/world.svg';
-import { Button } from '../components/CustomButtons';
+import { CountUp, FadeIn } from '../components/Motion';
 import Tools from '../components/Tools';
+
+const brandCards = [
+	{
+		title: 'Crossborder',
+		href: 'https://goldstack.co/',
+		icon: '/crossboder.png',
+		iconClass: 'pointer-events-none absolute right-4 top-4 h-11 w-11 opacity-90 [filter:brightness(0)_invert(1)]',
+		copy: 'Payments, FX, and treasury for global businesses.',
+		float: 3.4,
+	},
+	{
+		title: 'Payments',
+		href: 'https://www.korahq.com/',
+		icon: '/paument.png',
+		iconClass: 'pointer-events-none absolute right-4 top-4 h-11 w-11 opacity-90 [filter:brightness(0)_invert(1)]',
+		copy: 'Pan-African checkout, payouts, and settlements.',
+		float: 3.9,
+	},
+	{
+		title: 'Stablecoin',
+		href: 'https://www.trytreasura.com/',
+		icon: usdtImg,
+		iconClass: 'pointer-events-none absolute right-4 top-4 h-11 w-11',
+		copy: 'Tools to build multi-currency financial products.',
+		float: 3.2,
+	},
+	{
+		title: 'AI',
+		href: 'https://www.korahq.com/kovo',
+		icon: '/ai.png',
+		iconClass: 'pointer-events-none absolute right-3 top-3 h-12 w-12 opacity-90 [filter:brightness(0)_invert(1)]',
+		copy: 'Payments inside chat. Join the waitlist.',
+		float: 2.8,
+	},
+];
+
+const HEADLINE = 'Future of money';
+const MONEY_START = 'Future of '.length;
+let headlinePlayed = false;
+
+function TypedHeadline() {
+	const [count, setCount] = useState(headlinePlayed ? HEADLINE.length : 0);
+	const [done, setDone] = useState(headlinePlayed);
+
+	useEffect(() => {
+		if (headlinePlayed) return undefined;
+		let i = 0;
+		const id = setInterval(() => {
+			i += 1;
+			setCount(i);
+			if (i >= HEADLINE.length) {
+				clearInterval(id);
+				headlinePlayed = true;
+				setDone(true);
+			}
+		}, 62);
+		return () => clearInterval(id);
+	}, []);
+
+	const shown = HEADLINE.slice(0, count);
+
+	return (
+		<h1
+			className='mx-auto pt-8 pb-8 text-[72px] font-semibold leading-[0.95] tracking-[-0.05em] sm:text-[104px] lg:text-[148px]'
+		>
+			<span className='block whitespace-nowrap'>
+				{shown.slice(0, MONEY_START)}
+				<span className='text-[#7eb6ff]'>{shown.slice(MONEY_START)}</span>
+				{!done && (
+					<motion.span
+						aria-hidden='true'
+						className='ml-[0.04em] inline-block h-[0.78em] w-[0.045em] translate-y-[0.04em] bg-current align-middle'
+						animate={{ opacity: [1, 0, 1] }}
+						transition={{ duration: 0.7, repeat: Infinity, ease: 'linear' }}
+					/>
+				)}
+			</span>
+		</h1>
+	);
+}
 
 export default function Home() {
 	return (
 		<>
 			<section
-				// ${subTitle2 ? 'lg:pt-[120px]' : 'lg:pt-[150px]'}
-				// ${logo ? 'lg:pb-[68px]' : 'lg:pb-[150px]'}
 				className={`
-			bg-blue-950
+			relative overflow-hidden
+			flex flex-col justify-center
+			min-h-[calc(100svh-5.5rem)]
+			bg-[#0c2474]
 			text-white
-			py-[40px]
-			lg:pb-[0px]
-			lg:pt-[60px]
-
+			py-16
 	`}
 			>
+				<div className='pointer-events-none absolute inset-0' aria-hidden='true'>
+					<motion.div
+						className='absolute -left-16 top-24 h-72 w-40 rounded-[2.5rem] bg-[#16348f]/70'
+						animate={{ x: [0, 18, 0], y: [0, 22, 0] }}
+						transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
+					/>
+					<motion.div
+						className='absolute left-[18%] top-10 h-[420px] w-[340px] rounded-[2.75rem] bg-[#14307f]'
+						animate={{ x: [0, -16, 0], y: [0, 18, 0] }}
+						transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+					/>
+					<motion.div
+						className='absolute right-[8%] top-6 h-[460px] w-[380px] rounded-[3rem] bg-[#1a3d9e]/80'
+						animate={{ x: [0, 14, 0], y: [0, -20, 0] }}
+						transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+					/>
+					<motion.div
+						className='absolute -right-10 bottom-0 h-40 w-[55%] rounded-t-[2.5rem] bg-[#102a78]'
+						animate={{ x: [0, -12, 0] }}
+						transition={{ duration: 17, repeat: Infinity, ease: 'easeInOut' }}
+					/>
+					<motion.div
+						className='absolute left-[8%] -bottom-8 h-28 w-64 rounded-[2rem] bg-[#1c429e]/60'
+						animate={{ y: [0, -14, 0] }}
+						transition={{ duration: 15, repeat: Infinity, ease: 'easeInOut' }}
+					/>
+				</div>
 				<div
-					// md:max-w-6xl
 					className='
+				relative z-10
 				container
 				mx-auto
 				lg:items-center
@@ -65,89 +172,58 @@ items-center
 					// w-full
 					>
 						<div
-							// flex
-							// flex-col
 							className='
 							py-[14px]
 							md:pb-[27px] md:pt-[0px]
 							text-center
 							'
-						// pr-[95px]
-						// lg:w-[387px]
-						// justify-center
-						// col-start-1
-						// end-6
-						// pr-[45px]
-						// px-6z
 						>
-							<h1
-								className='text-[32px]
-					lg:text-[64px] font-[700] lg:leading-[70px]
-					 '
-							>
-								Seamless Payment Solutions
-							</h1>
-							<p
-								// lg:pb-[38px]
-								// lg:pt-[38px]
-								className='pt-[16px]
-							font-[400]
-							pb-[25px]
-							text-[18px] lg:text-[20px] leading-[35px] w-[90%] mx-auto'
-							>
-								At ValueBridge HQ, we specialize in providing top-tier payment processing solutions tailored to meet the unique needs of your business.
-								Our mission is to bridge the gap between your business and financial success through innovative, secure, and efficient payment services.
-							</p>
-
-							<div
-								className='flex flex-col lg:flex-row justify-center space-y-2 lg:space-y-0 lg:space-x-2
-								'
-							// items-center
-							>
-								<Link to='/contact'>
-									<Button type='primary' btnText='Talk to us' icon={true} />
-								</Link>
-							</div>
+							<TypedHeadline />
 						</div>
-						<div
-							className={`order-first lg:order-last
-							`}
-						// w-full
-						// lg:pr-0
-						// lg:col-span-2
-						// bg-red-900
-						// ${location === '/' && 'overflow-visible'}
-
-						// col-start-6
-						//  w-fit
-						>
-							<img
-								src={"https://cdn.prod.website-files.com/62dc80e748e94840febe84c5/639b1e29634eb2c32d000316_dashboard-img.svg"}
-								alt='hero-img'
-								// className='w-full'
-								// className='lg:h-full lg:w-full'
-								className='w-full'
-							// h-[471.03px]
-							/>
+						<div className='grid w-full max-w-5xl grid-cols-1 gap-5 pb-16 sm:grid-cols-2 lg:grid-cols-4'>
+							{brandCards.map((card, index) => (
+								<motion.a
+									key={card.title}
+									href={card.href}
+									target='_blank'
+									rel='noreferrer'
+									initial={{ opacity: 0, y: 28 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.7, delay: 0.15 + index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+									whileHover={{ y: -6, borderColor: '#7eb6ff', backgroundColor: 'rgba(255,255,255,0.15)' }}
+									className='relative overflow-hidden rounded-[28px] border border-white/20 bg-white/10 p-6 text-left outline-none backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-[#7eb6ff]'
+								>
+									<motion.img
+										src={card.icon}
+										alt=''
+										animate={{ y: [0, -5, 0] }}
+										transition={{ duration: card.float, repeat: Infinity, ease: 'easeInOut' }}
+										className={card.iconClass}
+									/>
+									<span className='relative block pr-14 text-[22px] font-semibold text-white'>{card.title}</span>
+									<span className='relative mt-3 block text-[16px] font-normal leading-6 text-white/70'>
+										{card.copy}
+									</span>
+								</motion.a>
+							))}
 						</div>
 					</div>
 				</div>
 			</section>
 
 			<DescriptionComp
-				title='Global access to international enterprises'
-				subTitle='Our advanced payment platform is designed to handle transactions quickly and securely, ensuring a seamless experience for both you and your customers. Our streamlined payment processes help you save time and reduce operational costs, allowing you to focus on growing your business.'
-				link={true}
-				linkText='Learn more about us'
+				title='The company behind the future of money'
+				subTitle='ValueBridge brings together cross-border rails, payments, stablecoins, and AI, so businesses can build on the future of money.'
+				link={false}
 			/>
 			<section
 				// md:max-w-6xl
 				className='container
 
-			mx-auto px-7 pt-[32px] pb-[59px]'
+			mx-auto px-7 pt-8 pb-20'
 			>
-				<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-2'>
-					<div className='grid grid-cols-1 gap-[8.97px]'>
+				<FadeIn className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5'>
+					<div className='grid grid-cols-1 gap-4 rounded-3xl bg-[#f4f6fb] p-5'>
 						<div className='h-[118px]'>
 							<img
 								src={settlementImg}
@@ -157,16 +233,16 @@ items-center
 							/>
 						</div>
 						<div className='text-center '>
-							<h3 className='font-[500] text-[18px] leading-[35px] text-[#101828] pb-[3px]'>
-								Recurring Billing
+							<h3 className='font-[500] text-[20px] leading-[35px] text-[#101828] pb-[3px]'>
+								Crossborder
 							</h3>
 
 							<p className='font-[400] leading-[24px] text-[#475467]'>
-								Simplify subscription management with our automated recurring billing options.
+								Money moving between countries.
 							</p>
 						</div>
 					</div>
-					<div className='grid grid-cols-1 gap-[8.97px] lg:h-[233px]'>
+					<div className='grid grid-cols-1 gap-4 rounded-3xl bg-[#f4f6fb] p-5'>
 						<div className='h-[118px]'>
 							<img
 								src={rateImg}
@@ -179,16 +255,16 @@ items-center
 							/>
 						</div>
 						<div className='text-center '>
-							<h3 className='font-[500] text-[18px] leading-[35px] text-[#101828] pb-[3px]'>
-								Payment Gateway
+							<h3 className='font-[500] text-[20px] leading-[35px] text-[#101828] pb-[3px]'>
+								Payments
 							</h3>
 
 							<p className='font-[400] leading-[24px] text-[#475467]'>
-								Our secure payment gateway integrates with your website or app.
+								How customers pay and get paid.
 							</p>
 						</div>
 					</div>
-					<div className='grid grid-cols-1  gap-[8.97px] lg:h-[233px]'>
+					<div className='grid grid-cols-1 gap-4 rounded-3xl bg-[#f4f6fb] p-5'>
 						<div className='h-[118px]'>
 							<img
 								src={currencyImg}
@@ -198,16 +274,16 @@ items-center
 							/>
 						</div>
 						<div className='text-center mt-[22px]'>
-							<h3 className='font-[500] text-[18px] leading-[35px] text-[#101828] pb-[3px]'>
-								International Payments
+							<h3 className='font-[500] text-[20px] leading-[35px] text-[#101828] pb-[3px]'>
+								Stablecoin
 							</h3>
 
 							<p className='font-[400] leading-[24px] text-[#475467]'>
-								Expand your business globally with our multi-currency payment processing services.
+								Digital money that keeps a steady value.
 							</p>
 						</div>
 					</div>
-					<div className='grid grid-cols-1 gap-[8.97px] lg:h-[233px]'>
+					<div className='grid grid-cols-1 gap-4 rounded-3xl bg-[#f4f6fb] p-5'>
 						<div className='h-[118px]'>
 							<img
 								src={psImg}
@@ -219,19 +295,19 @@ items-center
 						</div>
 						<div className='text-center'>
 							<h3
-								className='font-[500] text-[18px] leading-[35px] text-[#101828]
+								className='font-[500] text-[20px] leading-[35px] text-[#101828]
 							pb-[3px]
 							'
 							>
-								VIP customer support
+								AI
 							</h3>
 
 							<p className='font-[400] leading-[24px] text-[#475467]'>
-								Rapid settlement within 48 hours.
+								Paying inside a chat.
 							</p>
 						</div>
 					</div>
-				</div>
+				</FadeIn>
 			</section>
 
 			<section>
@@ -243,7 +319,7 @@ items-center
     px-7
     '
 				>
-					<div
+					<FadeIn
 						className='grid grid-cols-1 lg:grid-cols-2
 					items-center
                     '
@@ -252,11 +328,11 @@ items-center
 							<img src={worldImg} />
 						</div>
 						<div className='xl:ml-[130px] lg:w-[442px] py-[78px]'>
-							<h4 className='font-[400] leading-[32px] text-[14px] uppercase text-[#00611B]'>
+							<h4 className='font-[400] leading-[32px] text-[16px] uppercase text-[#00611B]'>
 							How It Works
 							</h4>
-							<h2 className='mt-[8px] mb-[24px] font-[600] text-[24px] leading-[36px] text-[#101828]'>
-							Expand your business globally with our multi-currency payment processing services.
+							<h2 className='mt-[8px] mb-[24px] font-[600] text-[27px] leading-[36px] text-[#101828]'>
+							Move money across rails, stablecoins, and AI.
 							</h2>
 
 							<div>
@@ -278,20 +354,20 @@ items-center
 											/>
 										</svg>
 										<div>
-											<h5 className='font-[500] text-[18px] leading-[32px] text-[#101828]'>
+											<h5 className='font-[500] text-[20px] leading-[32px] text-[#101828]'>
 												{item?.title}
 											</h5>
 
-											<p className='font-[400] text-[16px] leading-[32px] text-[#344054]'>
+											<p className='font-[400] text-[18px] leading-[32px] text-[#344054]'>
 												{item.subTitle}
 											</p>
 										</div>
 									</div>
 								))}
 							</div>
-						</div>
 					</div>
-				</div>
+				</FadeIn>
+			</div>
 			</section>
 			<section
 				className='
@@ -306,7 +382,7 @@ items-center
 					px-7
     '
 				>
-					<div
+					<FadeIn
 						className='grid grid-cols-1 lg:grid-cols-2
 						items-center
 						'
@@ -318,17 +394,20 @@ items-center
 						//  lg:ps-[56px]
 						//  py-[78px]
 						>
-							<h4 className='font-[400] leading-[32px] text-[14px] uppercase text-[#4C00EE]'>
+							<h4 className='font-[400] leading-[32px] text-[16px] uppercase text-[#4C00EE]'>
 								Payments							</h4>
-							<h2 className='mt-[8px] mb-[24px] font-[600] text-[24px] leading-[36px] text-[#101828]'>
-							Accept payments on the go with our mobile payment solutions, perfect for businesses of all sizes
+							<h2 className='mt-[8px] mb-[24px] font-[600] text-[27px] leading-[36px] text-[#101828]'>
+							Payments, one of the four products building the future of money.
 							</h2>
 
 							<div>
 								{list3.map((item, index) => (
-									<div
+									<motion.div
 										className='flex gap-[9px] items-start pb-[19px]'
-										key={index}
+										key={item.title}
+										initial={{ opacity: 0, x: -18 }}
+										animate={{ opacity: 1, x: 0 }}
+										transition={{ duration: 0.55, delay: 0.2 + index * 0.12, ease: [0.22, 1, 0.36, 1] }}
 									>
 										<svg
 											width='29'
@@ -343,15 +422,15 @@ items-center
 											/>
 										</svg>
 										<div>
-											<h5 className='font-[500] text-[18px] leading-[32px] text-[#101828]'>
+											<h5 className='font-[500] text-[20px] leading-[32px] text-[#101828]'>
 												{item?.title}
 											</h5>
 
-											<p className='font-[400] text-[16px] leading-[32px] text-[#344054]'>
+											<p className='font-[400] text-[18px] leading-[32px] text-[#344054]'>
 												{item.subTitle}
 											</p>
 										</div>
-									</div>
+									</motion.div>
 								))}
 							</div>
 						</div>
@@ -362,7 +441,7 @@ items-center
 						>
 							<img src={heroImg} />
 						</div>
-					</div>
+					</FadeIn>
 				</div>
 			</section>
 
@@ -379,22 +458,15 @@ items-center
 				px-6
 					mx-auto'
 				>
-					<div
-						// flex-col
-						// lg:flex-row
-						// flex
-						className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0
-						'
-					// justify-between items-center
-					// lg:justify-end
-					// gap-12px-8
+					<FadeIn
+						className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0'
 					>
 						<div className='grid grid-cols-1 gap-[16px] lg:pr-16 lg:border-r-[0.5px] lg:border-[#B3B3B3] '>
-							<h4 className='font-[400] text-[56px] leading-[68px] text-center text-[#1D2939]'>
-								20M+
+							<h4 className='font-[400] text-[63px] leading-[68px] text-center text-[#1D2939]'>
+								<CountUp to={270} suffix='M' />
 							</h4>
 							<p
-								className='font-[500px] text-[18px] leading-[24px]
+								className='font-[500px] text-[20px] leading-[24px]
 									text-center text-[#475467]
 									'
 							>
@@ -402,11 +474,11 @@ items-center
 							</p>
 						</div>
 						<div className='grid grid-cols-1 gap-[16px] lg:px-16 lg:border-r-[0.5px] lg:backdrop:order-[#B3B3B3] '>
-							<h4 className='font-[400] text-[56px] leading-[68px] text-center text-[#1D2939]'>
-								2K+
+							<h4 className='font-[400] text-[63px] leading-[68px] text-center text-[#1D2939]'>
+								<CountUp to={30} suffix='K' />
 							</h4>
 							<p
-								className='font-[500px] text-[18px] leading-[24px]
+								className='font-[500px] text-[20px] leading-[24px]
 									text-center text-[#475467]
 									'
 							>
@@ -415,11 +487,11 @@ items-center
 						</div>
 
 						<div className='grid grid-cols-1 gap-[16px] lg:px-16 lg:border-r-[0.5px] lg:border-[#B3B3B3]  '>
-							<h4 className='font-[400] text-[56px] leading-[68px] text-center text-[#1D2939]'>
-								45+
+							<h4 className='font-[400] text-[63px] leading-[68px] text-center text-[#1D2939]'>
+								<CountUp to={45} suffix='+' />
 							</h4>
 							<p
-								className='font-[500px] text-[18px] leading-[24px]
+								className='font-[500px] text-[20px] leading-[24px]
 									text-center text-[#475467]
 									'
 							>
@@ -428,18 +500,18 @@ items-center
 						</div>
 
 						<div className='grid grid-cols-1 gap-[16px]'>
-							<h4 className='font-[400] text-[56px] leading-[68px] text-center text-[#1D2939]'>
-								20K
+							<h4 className='font-[400] text-[63px] leading-[68px] text-center text-[#1D2939]'>
+								<CountUp to={100} suffix='K' />
 							</h4>
 							<p
-								className='font-[500px] text-[18px] leading-[24px]
+								className='font-[500px] text-[20px] leading-[24px]
 									text-center text-[#475467]
 									'
 							>
 								Daily API Calls
 							</p>
 						</div>
-					</div>
+					</FadeIn>
 				</div>
 			</section>
 			<section
@@ -457,15 +529,15 @@ items-center
 			px-7 pb-[28px] lg:pb-[48px]
 			'
 				>
-					<div className='lg:w-[665px]'>
-						<h2 className='font-[600] text-[30px] lg:text-[40px] lg:leading-[50px]'>
-							All the tools you need to setup payments for your business						</h2>
+					<FadeIn className='lg:w-[665px]'>
+						<h2 className='font-[600] text-[34px] lg:text-[45px] lg:leading-[50px]'>
+							The tools behind the future of money
+						</h2>
 
-						<p className='font-[400px] text-[20px] text-[#101828] leading-[36px] py-[16px] `pb-[24px]'>
-							In today's interconnected world, reaching new markets is crucial for growth. At ValueBridge HQ,
-							we enable international enterprises to access local markets effortlessly
+						<p className='font-[400px] text-[22px] text-[#101828] leading-[36px] py-[16px] `pb-[24px]'>
+							ValueBridge brings payouts, settlements, wallets, and cash together, in local currency and stablecoins, so businesses can reach new markets.
 						</p>
-					</div>
+					</FadeIn>
 				</div>
 				<Tools
 					toolsData={[
@@ -473,24 +545,24 @@ items-center
 							icon: payout,
 							title: 'Payouts',
 							subTitle:
-								'Make both single and bulk fiat payouts to 20+ countries easily'
+								'Make single and bulk payouts to 20+ countries, in local currency or stablecoins.'
 						},
 						{
 							icon: settlement,
 							title: 'Settlements',
-							subTitle: 'Settle your global partners in their local currency'
+							subTitle: 'Settle partners in their local currency or in stablecoins.'
 						},
 						{
 							icon: wallets,
 							title: 'Digital Wallets',
 							subTitle:
-								'Issue account numbers, track balances, and initiate and receive payments'
+								'Issue accounts, track balances, and move payments and stablecoins.'
 						},
 						{
 							icon: cash,
 							title: 'Cash Management',
 							subTitle:
-								'Settle your global partners in their local currency. Manage your assets and segregate accounts across multiple bank accounts.'
+								'Manage assets across bank accounts, local currency, and stablecoins.'
 						}
 					]}
 				/>
@@ -516,16 +588,16 @@ const list = [
 ];
 const list2 = [
 	{
-		title: 'Fraud Prevention',
-		subTitle: ' Advanced fraud detection tools to keep your business and customers safe.'
+		title: 'Cross-border rails',
+		subTitle: 'FX and treasury for businesses that operate in more than one country.'
 	},
 	{
-		title: 'Cheap Rates',
-		subTitle: 'Our transaction fees are transparent and unbeatable.'
+		title: 'Stablecoins',
+		subTitle: 'Move and hold value in stablecoins alongside local currency.'
 	},
 	{
-		title: 'POS Systems:',
-		subTitle: 'Enhance your in-store experience with our state-of-the-art Point of Sale systems.'
+		title: 'AI in chat',
+		subTitle: 'Customers pay inside the chat they already use.'
 	}
 ];
 const list3 = [
@@ -535,8 +607,8 @@ const list3 = [
 			'Provide your customers with their preferred payment options, boosting trust and sales.'
 	},
 	{
-		title: 'Collect Funds Instantly',
-		subTitle: 'Collect deposits from multiple countries easily and seamlessly.'
+		title: 'AI',
+		subTitle: 'Payments inside chat, so customers pay where they already talk.'
 	},
 	{
 		title: 'Cross-Border Transaction',
