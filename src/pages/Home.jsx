@@ -112,12 +112,14 @@ export default function Home() {
 			<section
 				className={`
 			relative overflow-hidden
-			flex flex-col justify-center
+			flex flex-col
 			min-h-[calc(100svh-5.5rem)]
 			bg-[#0c2474]
 			text-white
 			py-4
 			md:py-8
+			lg:pt-32
+			lg:pb-10
 	`}
 			>
 				<div className='pointer-events-none absolute inset-0' aria-hidden='true'>
@@ -152,7 +154,10 @@ export default function Home() {
 				relative z-10
 				container
 				mx-auto
-				lg:items-center
+				flex
+				w-full
+				flex-1
+				flex-col
 				px-7
 				lg:ps-7
 				'
@@ -165,10 +170,11 @@ export default function Home() {
 						className='
 						flex
 						flex-col
-						justify-between
-						gap-5
-						md:gap-8
-items-center
+						items-center
+						justify-start
+						gap-24
+						md:gap-20
+						lg:gap-28
 						'
 					// w-full
 					>
