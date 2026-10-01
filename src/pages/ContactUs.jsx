@@ -3,7 +3,7 @@ import { Button } from '../components/CustomButtons';
 import { FadeIn } from '../components/Motion';
 
 const fieldClass =
-	'mt-1.5 block h-11 w-full rounded-2xl border border-[#e6e8ee] bg-[#f7f7f5] px-4 text-[16px] text-[#101828] outline-none transition placeholder:text-[#98a2b3] focus:border-[#7eb6ff] focus:bg-white focus:ring-2 focus:ring-[#7eb6ff]/40';
+	'mt-1 block h-10 w-full rounded-xl border border-[#e6e8ee] bg-[#f7f7f5] px-3.5 text-[15px] text-[#101828] outline-none transition placeholder:text-[#98a2b3] focus:border-[#7eb6ff] focus:bg-white focus:ring-2 focus:ring-[#7eb6ff]/40';
 
 const ContactUs = () => {
 	return (
@@ -39,7 +39,7 @@ const ContactUs = () => {
 			'
 				>
 					<div
-						className='grid w-full items-center gap-8 lg:grid-cols-2 lg:gap-10'
+						className='grid w-full items-stretch gap-8 lg:grid-cols-2 lg:gap-10'
 					>
 						<div
 							className='
@@ -112,26 +112,24 @@ const ContactUs = () => {
 									text-[20px] leading-[35px]
 									'
 									>
-										212, King Street West,
+										1901, 48 Burj Gate tower,
 										<br />
-										6th floor,
+										Downtown - Sheikh Zayed Rd -
 										<br />
-										Toronto ON M5H 1K5
+										Dubai - United Arab Emirates
 									</p>
 								</div> */}
 							</div>
-						</div>
-						<FadeIn delay={0.12}>
-							<div>
-								<div className='w-full rounded-[28px] bg-white px-7 py-7 text-[#101828] shadow-[0_24px_60px_rgba(8,20,70,0.22)]'>
-									<div className='grid grid-cols-1 gap-x-4 gap-y-3.5 sm:grid-cols-6'>
+							<FadeIn delay={0.12}>
+								<div className='mt-5 w-full rounded-[24px] bg-white px-5 py-5 text-[#101828] shadow-[0_24px_60px_rgba(8,20,70,0.22)]'>
+									<div className='grid grid-cols-1 gap-x-3 gap-y-2.5 sm:grid-cols-6'>
 										<motion.div
 											className='sm:col-span-3'
 											initial={{ opacity: 0, y: 16 }}
 											animate={{ opacity: 1, y: 0 }}
 											transition={{ duration: 0.45, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
 										>
-											<label htmlFor='first-name' className='block text-[15px] font-medium'>
+											<label htmlFor='first-name' className='block text-[14px] font-medium'>
 												First name<span className='text-[#7eb6ff]'>*</span>
 											</label>
 											<input
@@ -149,7 +147,7 @@ const ContactUs = () => {
 											animate={{ opacity: 1, y: 0 }}
 											transition={{ duration: 0.45, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
 										>
-											<label htmlFor='last-name' className='block text-[15px] font-medium'>
+											<label htmlFor='last-name' className='block text-[14px] font-medium'>
 												Last name<span className='text-[#7eb6ff]'>*</span>
 											</label>
 											<input
@@ -167,7 +165,7 @@ const ContactUs = () => {
 											animate={{ opacity: 1, y: 0 }}
 											transition={{ duration: 0.45, delay: 0.19, ease: [0.22, 1, 0.36, 1] }}
 										>
-											<label htmlFor='company' className='block text-[15px] font-medium'>
+											<label htmlFor='company' className='block text-[14px] font-medium'>
 												Company name<span className='text-[#7eb6ff]'>*</span>
 											</label>
 											<input
@@ -184,7 +182,7 @@ const ContactUs = () => {
 											animate={{ opacity: 1, y: 0 }}
 											transition={{ duration: 0.45, delay: 0.26, ease: [0.22, 1, 0.36, 1] }}
 										>
-											<label htmlFor='email' className='block text-[15px] font-medium'>
+											<label htmlFor='email' className='block text-[14px] font-medium'>
 												Email address<span className='text-[#7eb6ff]'>*</span>
 											</label>
 											<input
@@ -202,7 +200,7 @@ const ContactUs = () => {
 											animate={{ opacity: 1, y: 0 }}
 											transition={{ duration: 0.45, delay: 0.33, ease: [0.22, 1, 0.36, 1] }}
 										>
-											<label htmlFor='phone' className='block text-[15px] font-medium'>
+											<label htmlFor='phone' className='block text-[14px] font-medium'>
 												Phone number<span className='text-[#7eb6ff]'>*</span>
 											</label>
 											<input
@@ -220,16 +218,16 @@ const ContactUs = () => {
 											animate={{ opacity: 1, y: 0 }}
 											transition={{ duration: 0.45, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
 										>
-											<label htmlFor='about' className='block text-[15px] font-medium'>
+											<label htmlFor='about' className='block text-[14px] font-medium'>
 												I want to enquire
 												<span className='text-[#7eb6ff]'>*</span>
 											</label>
 											<textarea
 												id='about'
 												name='about'
-												rows='3'
+												rows='2'
 												placeholder='Tell us about cross-border rails, payments, stablecoins, or AI.'
-												className={`${fieldClass} h-auto resize-none py-3`}
+												className={`${fieldClass} h-auto resize-none py-2`}
 											></textarea>
 										</motion.div>
 
@@ -247,6 +245,27 @@ const ContactUs = () => {
 											/>
 										</motion.div>
 									</div>
+								</div>
+							</FadeIn>
+						</div>
+						<FadeIn delay={0.18} className='w-full self-start'>
+							<div className='overflow-hidden rounded-[28px] bg-white shadow-[0_24px_60px_rgba(8,20,70,0.22)]'>
+								<iframe
+									title='Valuebridge office at Burj Gate, Dubai'
+									src='https://maps.google.com/maps?q=1901%2C%2048%20Burj%20Gate%20tower%2C%20Downtown%20-%20Sheikh%20Zayed%20Rd%20-%20Dubai%20-%20United%20Arab%20Emirates&z=16&output=embed'
+									className='h-[560px] w-full border-0 lg:h-[720px]'
+									loading='lazy'
+									referrerPolicy='no-referrer-when-downgrade'
+								/>
+								<div className='px-6 py-4 text-[#101828]'>
+									<p className='text-[16px] font-[600]'>Visit us</p>
+									<p className='text-[15px] leading-6 text-[#475467]'>
+										1901, 48 Burj Gate tower
+										<br />
+										Downtown, Sheikh Zayed Rd
+										<br />
+										Dubai, United Arab Emirates
+									</p>
 								</div>
 							</div>
 						</FadeIn>
