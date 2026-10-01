@@ -114,16 +114,37 @@ const Footer = () => {
 							>
 								info@Valuebridgehq.com
 							</a>
-							<a
+							<motion.a
 								href='https://maps.google.com/?q=1901%2C%2048%20Burj%20Gate%20tower%2C%20Downtown%20-%20Sheikh%20Zayed%20Rd%20-%20Dubai%20-%20United%20Arab%20Emirates'
 								target='_blank'
 								rel='noreferrer'
-								className='mt-3 block text-[16px] leading-7 text-[#475467] transition-colors hover:text-[#0c2474]'
+								className='mt-3 block text-[16px] leading-7 text-[#475467] transition-colors duration-200 hover:text-[#7eb6ff]'
+								initial={{ opacity: 0, y: 12 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true, amount: 0.6 }}
+								transition={{ duration: 0.5, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
 							>
-								<span className='block'>1901, 48 Burj Gate tower</span>
-								<span className='block'>Downtown, Sheikh Zayed Rd</span>
-								<span className='block'>Dubai, United Arab Emirates</span>
-							</a>
+								{[
+									'1901, 48 Burj Gate tower',
+									'Downtown, Sheikh Zayed Rd',
+									'Dubai, United Arab Emirates'
+								].map((line, index) => (
+									<motion.span
+										key={line}
+										className='block'
+										initial={{ opacity: 0, y: 8 }}
+										whileInView={{ opacity: 1, y: 0 }}
+										viewport={{ once: true }}
+										transition={{
+											duration: 0.4,
+											delay: 0.2 + index * 0.08,
+											ease: [0.22, 1, 0.36, 1]
+										}}
+									>
+										{line}
+									</motion.span>
+								))}
+							</motion.a>
 						</div>
 					</div>
 

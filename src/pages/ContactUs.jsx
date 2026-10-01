@@ -64,7 +64,11 @@ const ContactUs = () => {
 								Have a question about cross-border rails, payments, stablecoins, or AI? Our team is here to help.
 							</p>
 							<div className='grid grid-cols-1'>
-								<div>
+								<motion.div
+									initial={{ opacity: 0, y: 16 }}
+									animate={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.45, delay: 0.02, ease: [0.22, 1, 0.36, 1] }}
+								>
 									<h4
 										className='text-[22px] font-[600] lg:leading-[35px]
 					 '
@@ -78,7 +82,7 @@ const ContactUs = () => {
 									>
 										info@Valuebridgehq.com
 									</p>
-								</div>
+								</motion.div>
 								{/* <div
 									className='
 					py-[20px]
@@ -248,7 +252,26 @@ const ContactUs = () => {
 								</div>
 							</FadeIn>
 						</div>
-						<FadeIn delay={0.18} className='w-full self-start'>
+						<motion.div
+							className='w-full self-start'
+							initial='hidden'
+							whileInView='show'
+							viewport={{ once: true, amount: 0.15 }}
+							variants={{
+								hidden: { opacity: 0, x: 28 },
+								show: {
+									opacity: 1,
+									x: 0,
+									transition: {
+										duration: 0.7,
+										delay: 0.15,
+										ease: [0.22, 1, 0.36, 1],
+										staggerChildren: 0.08,
+										delayChildren: 0.28
+									}
+								}
+							}}
+						>
 							<div className='overflow-hidden rounded-[28px] bg-white shadow-[0_24px_60px_rgba(8,20,70,0.22)]'>
 								<iframe
 									title='Valuebridge office at Burj Gate, Dubai'
@@ -257,18 +280,28 @@ const ContactUs = () => {
 									loading='lazy'
 									referrerPolicy='no-referrer-when-downgrade'
 								/>
-								<div className='px-6 py-4 text-[#101828]'>
-									<p className='text-[16px] font-[600]'>Visit us</p>
-									<p className='text-[15px] leading-6 text-[#475467]'>
-										1901, 48 Burj Gate tower
-										<br />
-										Downtown, Sheikh Zayed Rd
-										<br />
-										Dubai, United Arab Emirates
-									</p>
+								<div className='px-6 py-5 text-[#101828]'>
+									<motion.p
+										className='text-[16px] font-[600]'
+										variants={{
+											hidden: { opacity: 0, y: 10 },
+											show: { opacity: 1, y: 0, transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] } }
+										}}
+									>
+										Visit us
+									</motion.p>
+									<motion.p
+										className='mt-1 text-[16px] leading-7 text-[#475467]'
+										variants={{
+											hidden: { opacity: 0, y: 10 },
+											show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: [0.22, 1, 0.36, 1] } }
+										}}
+									>
+										1901, 48 Burj Gate tower, Downtown, Sheikh Zayed Rd, Dubai, United Arab Emirates
+									</motion.p>
 								</div>
 							</div>
-						</FadeIn>
+						</motion.div>
 					</div>
 				</div>
 			</section>
