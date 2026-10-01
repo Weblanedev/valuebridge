@@ -114,6 +114,16 @@ const Footer = () => {
 							>
 								info@Valuebridgehq.com
 							</a>
+							<a
+								href='https://maps.google.com/?q=1901%2C%2048%20Burj%20Gate%20tower%2C%20Downtown%20-%20Sheikh%20Zayed%20Rd%20-%20Dubai%20-%20United%20Arab%20Emirates'
+								target='_blank'
+								rel='noreferrer'
+								className='mt-3 block text-[16px] leading-7 text-[#475467] transition-colors hover:text-[#0c2474]'
+							>
+								<span className='block'>1901, 48 Burj Gate tower</span>
+								<span className='block'>Downtown, Sheikh Zayed Rd</span>
+								<span className='block'>Dubai, United Arab Emirates</span>
+							</a>
 						</div>
 					</div>
 
