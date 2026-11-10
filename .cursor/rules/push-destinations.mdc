@@ -1,0 +1,17 @@
+---
+description: When the user says push, send the code to both GitHub remotes
+alwaysApply: true
+---
+
+# Push destinations
+
+When the user says "push":
+
+1. Stay on the local branch `ebuka`. Do not rename it to `main`.
+2. Keep `origin` as `https://github.com/Weblanedev/valuebridge.git`.
+3. Keep a second remote named `valuebridgenew` at `https://github.com/ebuka-kora/valuebridgenew.git`. Add it if it is missing. Do not replace `origin`.
+4. If there are uncommitted project changes, commit them, then push only the `ebuka` branch in both places:
+   - `git push origin HEAD:ebuka`
+   - `git push valuebridgenew HEAD:ebuka`
+5. Do not push to `main` on `valuebridgenew`.
+6. Do not add a placeholder README or use the message "first commit" for later pushes.
