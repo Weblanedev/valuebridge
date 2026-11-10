@@ -7,6 +7,17 @@ import { Button } from '../components/CustomButtons';
 import DescriptionComp from '../components/DescriptionComp';
 import { FadeIn } from '../components/Motion';
 
+const BrandLink = ({ href, children }) => (
+	<a
+		href={href}
+		target='_blank'
+		rel='noreferrer'
+		className='underline decoration-white/50 decoration-1 underline-offset-4 transition-colors hover:text-[#7eb6ff] hover:decoration-[#7eb6ff]'
+	>
+		{children}
+	</a>
+);
+
 const Company = () => {
 	return (
 		<>
@@ -84,7 +95,11 @@ const Company = () => {
 							pb-[25px]
 							text-[18px] lg:text-[22px] lg:leading-[35px]'
 							>
-								ValueBridge is the company behind the products building the future of money, from cross-border rails to payments, stablecoins, and AI.
+								ValueBridge is the company behind the products building the future of money, from{' '}
+								<BrandLink href='https://goldstack.co/'>cross-border rails</BrandLink> to{' '}
+								<BrandLink href='https://www.korahq.com/'>payments</BrandLink>,{' '}
+								<BrandLink href='https://www.trytreasura.com/'>stablecoins</BrandLink>, and{' '}
+								<BrandLink href='https://www.korahq.com/kovo'>AI</BrandLink>.
 							</p>
 							<p
 								// pt-[16px]
